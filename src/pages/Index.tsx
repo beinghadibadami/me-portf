@@ -1,12 +1,42 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useEffect } from 'react';
+import CursorDog from '@/components/CursorDog';
+import FloatingNavbar from '@/components/FloatingNavbar';
+import HeroSection from '@/components/HeroSection';
+import AboutSection from '@/components/AboutSection';
+import ProjectsSection from '@/components/ProjectsSection';
+import SkillsSection from '@/components/SkillsSection';
+import EducationSection from '@/components/EducationSection';
+import HackathonsSection from '@/components/HackathonsSection';
+import CertificationsSection from '@/components/CertificationsSection';
+import ExperienceSection from '@/components/ExperienceSection';
+import ContactSection from '@/components/ContactSection';
 
 const Index = () => {
+  useEffect(() => {
+    // Force dark theme
+    document.documentElement.classList.add('dark');
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background text-foreground dark">
+      {/* Cursor Following Dog */}
+      <CursorDog />
+      
+      {/* Floating Navigation */}
+      <FloatingNavbar />
+      
+      {/* Main Content */}
+      <main className="relative">
+        <HeroSection />
+        <AboutSection />
+        <ProjectsSection />
+        <SkillsSection />
+        <EducationSection />
+        <HackathonsSection />
+        <CertificationsSection />
+        <ExperienceSection />
+        <ContactSection />
+      </main>
     </div>
   );
 };
