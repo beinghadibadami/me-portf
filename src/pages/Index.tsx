@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import CursorDog from '@/components/CursorDog';
 import FloatingNavbar from '@/components/FloatingNavbar';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
@@ -19,9 +18,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground dark">
-      {/* Cursor Following Dog */}
-      <CursorDog />
-      
       {/* Floating Navigation */}
       <FloatingNavbar />
       

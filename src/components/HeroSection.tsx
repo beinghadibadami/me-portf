@@ -23,25 +23,34 @@ const HeroSection = () => {
 
       <div className="container relative z-10 text-center animate-fade-in">
         <div className="max-w-4xl mx-auto">
+          {/* Profile Image Placeholder */}
+          <div className="mb-8 animate-slide-up">
+            <div className="w-32 h-32 mx-auto rounded-full bg-gradient-primary p-1">
+              <div className="w-full h-full rounded-full bg-background-secondary flex items-center justify-center">
+                <span className="text-foreground-muted text-sm">Add Photo</span>
+              </div>
+            </div>
+          </div>
+
           {/* Main Title */}
-          <h1 className="text-7xl md:text-8xl font-display font-bold mb-6 animate-slide-up">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-slide-up" style={{ animationDelay: '0.1s' }}>
             <span className="bg-gradient-primary bg-clip-text text-transparent">
               Hadi
             </span>
-            <br />
+            {' '}
             <span className="text-foreground">Badami</span>
           </h1>
 
           {/* Subtitle */}
-          <div className="text-xl md:text-2xl text-foreground-muted mb-8 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-            <span className="font-mono bg-background-accent px-4 py-2 rounded-lg border border-glass-border">
-              AI/ML Engineer & Data Scientist
+          <div className="text-lg md:text-xl text-foreground-muted mb-8 animate-slide-up" style={{ animationDelay: '0.2s' }}>
+            <span className="bg-background-accent px-4 py-2 rounded-lg border border-glass-border">
+              AI/ML Engineer
             </span>
           </div>
 
           {/* Inspiring Quote */}
           <div className="mb-12 animate-slide-up" style={{ animationDelay: '0.4s' }}>
-            <blockquote className="text-2xl md:text-3xl font-display font-medium text-foreground leading-relaxed">
+            <blockquote className="text-xl md:text-2xl font-medium text-foreground leading-relaxed">
               "Climb the mountain so that you can see the world,
               <br />
               <span className="bg-gradient-primary bg-clip-text text-transparent">
@@ -54,7 +63,7 @@ const HeroSection = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 animate-slide-up" style={{ animationDelay: '0.6s' }}>
             <Button
               size="lg"
-              className="bg-gradient-primary hover:shadow-glow transition-all duration-300 text-lg px-8 py-6 rounded-2xl font-semibold"
+              className="bg-gradient-primary hover:shadow-glow transition-all duration-300 px-6 py-3 rounded-xl font-medium"
               onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
             >
               View My Work
@@ -62,7 +71,7 @@ const HeroSection = () => {
             <Button
               variant="outline"
               size="lg"
-              className="border-glass-border bg-glass hover:bg-glass-hover backdrop-blur-sm text-lg px-8 py-6 rounded-2xl font-semibold"
+              className="border-glass-border bg-glass hover:bg-glass-hover backdrop-blur-sm px-6 py-3 rounded-xl font-medium"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Get In Touch

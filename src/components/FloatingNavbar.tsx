@@ -58,8 +58,8 @@ const FloatingNavbar = () => {
   return (
     <nav
       className={cn(
-        'fixed top-6 left-1/2 -translate-x-1/2 z-40 transition-all duration-300',
-        isVisible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
+        'fixed bottom-6 left-1/2 -translate-x-1/2 z-30 transition-all duration-300',
+        isVisible ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
       )}
     >
       <div className="bg-gradient-card backdrop-blur-md border border-glass-border rounded-2xl px-6 py-3 shadow-card">
