@@ -54,8 +54,8 @@ const EducationSection = () => {
                   <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-primary rounded-full border-4 border-background shadow-glow z-10" />
 
                   {/* Content Card */}
-                  <div className={`w-5/12 ${index % 2 === 0 ? 'pr-8' : 'pl-8'}`}>
-                    <div className="bg-gradient-card backdrop-blur-md rounded-3xl p-8 border border-glass-border shadow-card hover:shadow-glow transition-all duration-500 group">
+                  <div className={`w-5/12 ${index % 2 === 0 ? 'pr-6' : 'pl-6'}`}>
+                    <div className="bg-gradient-card backdrop-blur-md rounded-2xl p-6 border border-glass-border shadow-card hover:shadow-glow transition-all duration-500 group">
                       {/* Status Badge */}
                       <div className="flex justify-between items-start mb-4">
                         <span className={`px-3 py-1 rounded-full text-sm font-semibold ${
@@ -109,8 +109,8 @@ const EducationSection = () => {
           </div>
 
           {/* Additional Info */}
-          <div className="mt-16 text-center">
-            <div className="bg-gradient-card backdrop-blur-md rounded-3xl p-8 border border-glass-border shadow-card max-w-4xl mx-auto">
+          <div className="mt-12 text-center">
+            <div className="bg-gradient-card backdrop-blur-md rounded-2xl p-6 border border-glass-border shadow-card max-w-3xl mx-auto">
               <h3 className="text-2xl font-display font-semibold text-foreground mb-4">
                 Academic Excellence & Beyond
               </h3>

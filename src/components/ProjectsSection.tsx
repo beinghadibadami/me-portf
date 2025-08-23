@@ -58,7 +58,7 @@ const ProjectsSection = () => {
                 {/* Hover Effect Background */}
                 <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-5 transition-opacity duration-500" />
                 
-                <div className={`p-8 ${project.featured ? 'md:p-12' : ''}`}>
+                <div className={`p-6 ${project.featured ? 'md:p-8' : ''}`}>
                   <div className={`${project.featured ? 'grid md:grid-cols-2 gap-8 items-center' : ''}`}>
                     <div>
                       {/* Project Badge */}

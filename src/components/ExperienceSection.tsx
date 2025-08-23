@@ -71,7 +71,7 @@ const ExperienceSection = () => {
                   </div>
                 )}
 
-                <div className={`p-8 ${exp.featured ? 'md:p-12' : ''}`}>
+                <div className={`p-6 ${exp.featured ? 'md:p-8' : ''}`}>
                   <div className={`${exp.featured ? 'grid md:grid-cols-3 gap-8' : ''}`}>
                     {/* Main Content */}
                     <div className={exp.featured ? 'md:col-span-2' : ''}>
@@ -186,8 +186,8 @@ const ExperienceSection = () => {
           </div>
 
           {/* Career Goals */}
-          <div className="mt-16">
-            <div className="bg-gradient-card backdrop-blur-md rounded-3xl p-8 border border-glass-border shadow-card max-w-4xl mx-auto text-center">
+          <div className="mt-12">
+            <div className="bg-gradient-card backdrop-blur-md rounded-2xl p-6 border border-glass-border shadow-card max-w-3xl mx-auto text-center">
               <h3 className="text-2xl font-display font-semibold text-foreground mb-4">
                 Looking Forward
               </h3>

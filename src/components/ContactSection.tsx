@@ -46,13 +46,6 @@ const ContactSection = () => {
       color: 'neon-cyan'
     },
     {
-      icon: Phone,
-      label: 'Phone',
-      value: '+91 98765 43210',
-      href: 'tel:+919876543210',
-      color: 'neon-purple'
-    },
-    {
       icon: MapPin,
       label: 'Location',
       value: 'Ahmedabad, Gujarat, India',
@@ -93,29 +86,29 @@ const ContactSection = () => {
             <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full mt-6" />
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="max-w-4xl mx-auto">
             {/* Contact Information */}
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-3xl font-display font-bold text-foreground mb-6">
+            <div className="space-y-6">
+              <div className="text-center">
+                <h3 className="text-2xl font-display font-bold text-foreground mb-4">
                   Get In Touch
                 </h3>
-                <p className="text-lg text-foreground-muted leading-relaxed mb-8">
+                <p className="text-base text-foreground-muted leading-relaxed mb-6">
                   I'm always open to discussing new opportunities, innovative projects, 
                   or just having a chat about the latest developments in AI and machine learning.
                 </p>
               </div>
 
               {/* Contact Info Cards */}
-              <div className="space-y-4">
+              <div className="grid md:grid-cols-2 gap-4 mb-6">
                 {contactInfo.map((info) => (
                   <div
                     key={info.label}
-                    className="bg-gradient-card backdrop-blur-md rounded-2xl p-6 border border-glass-border shadow-card hover:shadow-glow transition-all duration-300 group"
+                    className="bg-gradient-card backdrop-blur-md rounded-xl p-4 border border-glass-border shadow-card hover:shadow-glow transition-all duration-300 group"
                   >
-                    <div className="flex items-center gap-4">
-                      <div className={`w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center`}>
-                        <info.icon className="w-6 h-6 text-background" />
+                    <div className="flex items-center gap-3">
+                      <div className={`w-10 h-10 rounded-lg bg-gradient-primary flex items-center justify-center`}>
+                        <info.icon className="w-5 h-5 text-background" />
                       </div>
                       <div className="flex-1">
                         <div className="text-sm text-foreground-muted mb-1">{info.label}</div>
@@ -137,124 +130,31 @@ const ContactSection = () => {
 
               {/* Social Links */}
               <div>
-                <h4 className="text-xl font-display font-semibold text-foreground mb-4">
+                <h4 className="text-lg font-display font-semibold text-foreground mb-3 text-center">
                   Follow Me
                 </h4>
-                <div className="flex gap-4">
+                <div className="flex gap-4 justify-center">
                   {socialLinks.map((social) => (
                     <a
                       key={social.label}
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-gradient-card backdrop-blur-md rounded-2xl p-6 border border-glass-border shadow-card hover:shadow-glow transition-all duration-300 group flex-1"
+                      className="bg-gradient-card backdrop-blur-md rounded-xl p-4 border border-glass-border shadow-card hover:shadow-glow transition-all duration-300 group"
                     >
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-lg bg-gradient-primary flex items-center justify-center">
-                          <social.icon className="w-5 h-5 text-background" />
+                        <div className="w-8 h-8 rounded-lg bg-gradient-primary flex items-center justify-center">
+                          <social.icon className="w-4 h-4 text-background" />
                         </div>
                         <div>
-                          <div className="text-foreground font-semibold">{social.label}</div>
-                          <div className="text-sm text-foreground-muted">{social.username}</div>
+                          <div className="text-foreground font-semibold text-sm">{social.label}</div>
+                          <div className="text-xs text-foreground-muted">{social.username}</div>
                         </div>
                       </div>
                     </a>
                   ))}
                 </div>
               </div>
-            </div>
-
-            {/* Contact Form */}
-            <div className="bg-gradient-card backdrop-blur-md rounded-3xl p-8 border border-glass-border shadow-card">
-              <h3 className="text-2xl font-display font-bold text-foreground mb-6">
-                Send a Message
-              </h3>
-              
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                      Name
-                    </label>
-                    <Input
-                      id="name"
-                      name="name"
-                      type="text"
-                      required
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      className="bg-background-accent border-glass-border focus:border-neon-cyan"
-                      placeholder="Your full name"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                      Email
-                    </label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      className="bg-background-accent border-glass-border focus:border-neon-cyan"
-                      placeholder="your.email@example.com"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
-                    Subject
-                  </label>
-                  <Input
-                    id="subject"
-                    name="subject"
-                    type="text"
-                    required
-                    value={formData.subject}
-                    onChange={handleInputChange}
-                    className="bg-background-accent border-glass-border focus:border-neon-cyan"
-                    placeholder="What's this about?"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                    Message
-                  </label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    required
-                    rows={5}
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    className="bg-background-accent border-glass-border focus:border-neon-cyan resize-none"
-                    placeholder="Tell me about your project or just say hello..."
-                  />
-                </div>
-
-                <Button
-                  type="submit"
-                  size="lg"
-                  disabled={isSubmitting}
-                  className="w-full bg-gradient-primary hover:shadow-glow transition-all duration-300 text-lg py-6"
-                >
-                  {isSubmitting ? (
-                    <>
-                      <div className="w-5 h-5 border-2 border-background border-t-transparent rounded-full animate-spin mr-2" />
-                      Sending...
-                    </>
-                  ) : (
-                    <>
-                      <Send className="w-5 h-5 mr-2" />
-                      Send Message
-                    </>
-                  )}
-                </Button>
-              </form>
             </div>
           </div>
 
