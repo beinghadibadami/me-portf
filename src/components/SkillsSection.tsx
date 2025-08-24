@@ -1,44 +1,19 @@
 const skills = [
   {
     category: 'AI/ML & Data Science',
-    items: [
-      { name: 'Python', level: 95 },
-      { name: 'TensorFlow', level: 88 },
-      { name: 'scikit-learn', level: 92 },
-      { name: 'pandas', level: 90 },
-      { name: 'NLP', level: 85 },
-      { name: 'LLMs', level: 87 },
-      { name: 'Machine Learning', level: 90 },
-      { name: 'Data Science', level: 88 }
-    ]
+    items: ['Python', 'TensorFlow', 'scikit-learn', 'pandas', 'NLP', 'LLMs', 'Machine Learning']
   },
   {
     category: 'Backend & APIs',
-    items: [
-      { name: 'FastAPI', level: 90 },
-      { name: 'Flask', level: 88 },
-      { name: 'Django', level: 82 },
-      { name: 'RESTful APIs', level: 92 },
-      { name: 'Web Scraping', level: 85 }
-    ]
+    items: ['FastAPI', 'Flask', 'Django', 'RESTful APIs', 'Web Scraping']
   },
   {
     category: 'Databases & Vector Search',
-    items: [
-      { name: 'MongoDB', level: 85 },
-      { name: 'Pinecone', level: 80 },
-      { name: 'Vector Databases', level: 82 },
-      { name: 'RAG Systems', level: 88 }
-    ]
+    items: ['MongoDB', 'Pinecone', 'Vector Databases', 'RAG Systems']
   },
   {
     category: 'Frontend & Web',
-    items: [
-      { name: 'Next.js', level: 85 },
-      { name: 'React', level: 88 },
-      { name: 'TypeScript', level: 82 },
-      { name: 'Tailwind CSS', level: 90 }
-    ]
+    items: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS']
   }
 ];
 
@@ -71,24 +46,17 @@ const SkillsSection = () => {
                   {category.category}
                 </h3>
 
-                <div className="space-y-6">
+                <div className="flex flex-wrap gap-3">
                   {category.items.map((skill, index) => (
-                    <div key={skill.name} className="group">
-                      <div className="flex justify-between items-center mb-2">
-                        <span className="text-foreground font-medium">{skill.name}</span>
-                        <span className="text-sm text-foreground-muted font-mono">{skill.level}%</span>
-                      </div>
-                      
-                      <div className="h-2 bg-background-accent rounded-full overflow-hidden">
-                        <div
-                          className="h-full bg-gradient-primary rounded-full transition-all duration-1000 ease-out group-hover:animate-glow"
-                          style={{
-                            width: `${skill.level}%`,
-                            animationDelay: `${categoryIndex * 200 + index * 100}ms`
-                          }}
-                        />
-                      </div>
-                    </div>
+                    <span
+                      key={skill}
+                      className="px-4 py-2 bg-background-accent text-foreground rounded-full text-sm font-medium hover:bg-gradient-primary hover:text-background transition-all duration-300"
+                      style={{
+                        animationDelay: `${categoryIndex * 200 + index * 100}ms`
+                      }}
+                    >
+                      {skill}
+                    </span>
                   ))}
                 </div>
 
