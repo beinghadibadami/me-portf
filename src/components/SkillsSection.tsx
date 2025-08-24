@@ -5,11 +5,11 @@ const skills = [
   },
   {
     category: 'Backend & APIs',
-    items: ['FastAPI', 'Flask', 'Django', 'RESTful APIs', 'Web Scraping']
+    items: ['FastAPI', 'Flask', 'Node.js','Express.js', 'Web Scraping','Beautiful Soup','Selenium']
   },
   {
-    category: 'Databases & Vector Search',
-    items: ['MongoDB', 'Pinecone', 'Vector Databases', 'RAG Systems']
+    category: 'Databases',
+    items: ['MongoDB', 'Pinecone', 'Vector Databases', 'MySQL', 'PostgreSQL']
   },
   {
     category: 'Frontend & Web',
@@ -61,30 +61,20 @@ const SkillsSection = () => {
                 </div>
 
                 {/* Category Icon */}
-                <div className="mt-8 text-center">
-                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-primary text-background">
+                {/* <div className="mt-8 text-center">
+                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full text-background">
                     {categoryIndex === 0 && '🤖'}
                     {categoryIndex === 1 && '⚡'}
                     {categoryIndex === 2 && '🗄️'}
                     {categoryIndex === 3 && '🎨'}
                   </div>
-                </div>
+                </div> */}
               </div>
             ))}
           </div>
 
           {/* Additional Info */}
-          <div className="mt-16 text-center">
-            <div className="bg-gradient-card backdrop-blur-md rounded-3xl p-8 border border-glass-border shadow-card max-w-4xl mx-auto">
-              <h3 className="text-2xl font-display font-semibold text-foreground mb-6">
-                Always Learning, Always Growing
-              </h3>
-              <p className="text-lg text-foreground-muted leading-relaxed">
-                The AI/ML field evolves rapidly, and I'm committed to staying at the forefront. 
-                Currently exploring advanced RAG architectures, multimodal AI systems, and the latest developments in large language models.
-              </p>
-            </div>
-          </div>
+          
         </div>
       </div>
     </section>
