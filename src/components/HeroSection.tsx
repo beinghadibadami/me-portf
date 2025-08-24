@@ -21,92 +21,109 @@ const HeroSection = () => {
         }} />
       </div>
 
-      <div className="container relative z-10 text-center animate-fade-in">
-        <div className="max-w-4xl mx-auto">
-          {/* Profile Image Placeholder */}
-          <div className="mb-8 animate-slide-up">
-            <div className="w-32 h-32 mx-auto rounded-full bg-gradient-primary p-1">
-              <div className="w-full h-full rounded-full bg-background-secondary flex items-center justify-center">
-                <span className="text-foreground-muted text-sm">Add Photo</span>
+      <div className="container relative z-10 animate-fade-in">
+        <div className="max-w-7xl mx-auto">
+          {/* Two Column Layout */}
+          <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen">
+            
+            {/* Left Column - Content */}
+            <div className="text-left space-y-8">
+              {/* Main Title */}
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold animate-slide-up" style={{ animationDelay: '0.1s' }}>
+                <span className="bg-gradient-primary bg-clip-text text-transparent">
+                  Hadi
+                </span>
+                {' '}
+                <span className="text-foreground">Badami</span>
+              </h1>
+
+              {/* Subtitle */}
+              {/* <div className="animate-slide-up" style={{ animationDelay: '0.2s' }}>
+                <span className="text-lg md:text-xl bg-background-accent px-4 py-2 rounded-lg border border-glass-border text-foreground-muted inline-block">
+                  AI/ML Engineer
+                </span>
+              </div> */}
+
+              {/* Inspiring Quote */}
+              <div className="animate-slide-up" style={{ animationDelay: '0.4s' }}>
+                <blockquote className="text-xl md:text-2xl lg:text-3xl font-medium text-foreground leading-relaxed">
+                  "No treasure is more beneficial than knowledge,
+                  <span className="bg-gradient-primary bg-clip-text text-transparent">
+                      and no honor is greater than wisdom."
+                  </span>
+                </blockquote>
+              </div>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 animate-slide-up" style={{ animationDelay: '0.6s' }}>
+                <Button
+                  size="lg"
+                  className="bg-gradient-primary hover:shadow-glow transition-all duration-300 px-8 py-4 rounded-xl font-medium text-lg"
+                  onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  View My Work
+                </Button>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-glass-border bg-glass hover:bg-glass-hover backdrop-blur-sm px-8 py-4 rounded-xl font-medium text-lg"
+                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  Get In Touch
+                </Button>
+              </div>
+
+              {/* Social Links */}
+              <div className="flex space-x-6 animate-slide-up" style={{ animationDelay: '0.8s' }}>
+                <a
+                  href="https://github.com/beinghadibadami"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-4 rounded-2xl bg-glass border border-glass-border hover:bg-glass-hover hover:shadow-glow transition-all duration-300 group"
+                >
+                  <Github className="w-6 h-6 text-foreground-muted group-hover:text-neon-cyan transition-colors" />
+                </a>
+                <a
+                  href="https://linkedin.com/in/hadi-badami"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-4 rounded-2xl bg-glass border border-glass-border hover:bg-glass-hover hover:shadow-glow transition-all duration-300 group"
+                >
+                  <Linkedin className="w-6 h-6 text-foreground-muted group-hover:text-neon-blue transition-colors" />
+                </a>
+                <a
+                  href="mailto:hadibadami14@gmail.com"
+                  className="p-4 rounded-2xl bg-glass border border-glass-border hover:bg-glass-hover hover:shadow-glow transition-all duration-300 group"
+                >
+                  <Mail className="w-6 h-6 text-foreground-muted group-hover:text-neon-purple transition-colors" />
+                </a>
+              </div>
+            </div>
+
+            {/* Right Column - Profile Image */}
+            <div className="flex justify-center lg:justify-end animate-slide-up" style={{ animationDelay: '0.3s' }}>
+              <div className="relative">
+                {/* Profile Image with enhanced size and styling */}
+                <div className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full bg-gradient-primary p-2 shadow-2xl">
+                  <div className="w-full h-full rounded-full bg-background-secondary flex items-center justify-center overflow-hidden">
+                    <img
+                      src="/hadi.jpg"
+                      alt="Hadi Badami"
+                      className="w-full h-full object-cover rounded-full"
+                    />
+                  </div>
+                </div>
+                
+                {/* Decorative elements around the image */}
+                <div className="absolute -top-4 -right-4 w-8 h-8 bg-neon-cyan rounded-full animate-pulse" />
+                <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-neon-purple rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
               </div>
             </div>
           </div>
 
-          {/* Main Title */}
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-slide-up" style={{ animationDelay: '0.1s' }}>
-            <span className="bg-gradient-primary bg-clip-text text-transparent">
-              Hadi
-            </span>
-            {' '}
-            <span className="text-foreground">Badami</span>
-          </h1>
-
-          {/* Subtitle */}
-          <div className="text-lg md:text-xl text-foreground-muted mb-8 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-            <span className="bg-background-accent px-4 py-2 rounded-lg border border-glass-border">
-              AI/ML Engineer
-            </span>
-          </div>
-
-          {/* Inspiring Quote */}
-          <div className="mb-12 animate-slide-up" style={{ animationDelay: '0.4s' }}>
-            <blockquote className="text-xl md:text-2xl font-medium text-foreground leading-relaxed">
-              "Climb the mountain so that you can see the world,
-              <br />
-              <span className="bg-gradient-primary bg-clip-text text-transparent">
-                not so the world can see you."
-              </span>
-            </blockquote>
-          </div>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 animate-slide-up" style={{ animationDelay: '0.6s' }}>
-            <Button
-              size="lg"
-              className="bg-gradient-primary hover:shadow-glow transition-all duration-300 px-6 py-3 rounded-xl font-medium"
-              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              View My Work
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-glass-border bg-glass hover:bg-glass-hover backdrop-blur-sm px-6 py-3 rounded-xl font-medium"
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              Get In Touch
-            </Button>
-          </div>
-
-          {/* Social Links */}
-          <div className="flex justify-center space-x-6 mb-16 animate-slide-up" style={{ animationDelay: '0.8s' }}>
-            <a
-              href="https://github.com/hadibadami"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-4 rounded-2xl bg-glass border border-glass-border hover:bg-glass-hover hover:shadow-glow transition-all duration-300 group"
-            >
-              <Github className="w-6 h-6 text-foreground-muted group-hover:text-neon-cyan transition-colors" />
-            </a>
-            <a
-              href="https://linkedin.com/in/hadibadami"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-4 rounded-2xl bg-glass border border-glass-border hover:bg-glass-hover hover:shadow-glow transition-all duration-300 group"
-            >
-              <Linkedin className="w-6 h-6 text-foreground-muted group-hover:text-neon-blue transition-colors" />
-            </a>
-            <a
-              href="mailto:hadi.badami@example.com"
-              className="p-4 rounded-2xl bg-glass border border-glass-border hover:bg-glass-hover hover:shadow-glow transition-all duration-300 group"
-            >
-              <Mail className="w-6 h-6 text-foreground-muted group-hover:text-neon-purple transition-colors" />
-            </a>
-          </div>
-
-          {/* Scroll Indicator */}
-          <div className="animate-bounce" style={{ animationDelay: '1s' }}>
-            <ArrowDown className="w-8 h-8 text-foreground-muted mx-auto" />
+          {/* Scroll Indicator - Centered at bottom */}
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce" style={{ animationDelay: '1s' }}>
+            <ArrowDown className="w-8 h-8 text-foreground-muted" />
           </div>
         </div>
       </div>

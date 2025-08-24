@@ -5,31 +5,15 @@ const certifications = [
   {
     title: 'Oracle AI Vector Search Certified',
     issuer: 'Oracle University',
-    date: 'January 2025',
-    credentialId: 'ORA-AIVS-2025-HB001',
+    date: 'July 2025',
+    // credentialId: 'ORA-AIVS-2025-HB001',
     description: 'Comprehensive certification covering vector database implementations, similarity search algorithms, and AI-powered search optimization.',
-    skills: ['Vector Databases', 'Similarity Search', 'Oracle Database', 'AI Search Optimization'],
+    skills: ['Vector Databases', 'Similarity Search', 'Oracle Database', 'AI Search Optimization','Understanding of vector fundamentals'],
     hasCredentials: true,
-    logo: '🔍'
+    logo: '/oracle_logo.png'
   }
 ];
 
-const upcomingCerts = [
-  {
-    title: 'AWS Machine Learning Specialty',
-    issuer: 'Amazon Web Services',
-    expectedDate: 'Q2 2025',
-    description: 'Advanced certification focusing on ML model deployment, optimization, and management on AWS cloud infrastructure.',
-    logo: '☁️'
-  },
-  {
-    title: 'TensorFlow Developer Certificate',
-    issuer: 'Google',
-    expectedDate: 'Q3 2025',
-    description: 'Practical certification demonstrating proficiency in building and deploying ML models using TensorFlow.',
-    logo: '🧠'
-  }
-];
 
 const CertificationsSection = () => {
   return (
@@ -65,7 +49,11 @@ const CertificationsSection = () => {
                     <div className="md:col-span-2">
                       <div className="flex items-start gap-4 mb-4">
                         <div className="w-16 h-16 rounded-2xl bg-gradient-primary flex items-center justify-center text-2xl text-background">
-                          {cert.logo}
+                           <img
+    src="/oracle_logo.png"
+    alt="Oracle Logo"
+    className="w-full h-full object-fit"
+  />
                         </div>
                         <div className="flex-1">
                           <h4 className="text-2xl font-display font-bold text-foreground mb-2">
@@ -78,9 +66,9 @@ const CertificationsSection = () => {
                               <span className="text-sm">{cert.date}</span>
                             </div>
                           </div>
-                          <p className="text-sm font-mono text-foreground-muted mb-4">
+                          {/* <p className="text-sm font-mono text-foreground-muted mb-4">
                             ID: {cert.credentialId}
-                          </p>
+                          </p> */}
                         </div>
                       </div>
 
@@ -116,76 +104,18 @@ const CertificationsSection = () => {
                         <Button
                           size="sm"
                           className="bg-gradient-primary hover:shadow-glow transition-all duration-300"
+                          asChild
                         >
+                          <a href='https://catalog-education.oracle.com/ords/certview/sharebadge?id=D2B1D64104F7EC257F0AA496DC34EBC19CD433C8B527499CDAAAD2EC8DA79F12' target="_blank" rel="noopener noreferrer" >
                           <ExternalLink className="w-4 h-4 mr-2" />
                           View Credentials
+                          </a>
                         </Button>
                       )}
                     </div>
                   </div>
                 </div>
               ))}
-            </div>
-          </div>
-
-          {/* Upcoming Certifications */}
-          <div>
-            <h3 className="text-2xl font-display font-semibold text-foreground mb-8">
-              Upcoming Certifications
-            </h3>
-            <div className="grid md:grid-cols-2 gap-6">
-              {upcomingCerts.map((cert, index) => (
-                <div
-                  key={cert.title}
-                  className="bg-gradient-card backdrop-blur-md rounded-3xl p-8 border border-glass-border shadow-card hover:shadow-glow transition-all duration-500 relative overflow-hidden"
-                >
-                  {/* Progress Indicator */}
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-background-accent">
-                    <div 
-                      className="h-full bg-gradient-primary transition-all duration-1000"
-                      style={{ width: index === 0 ? '60%' : '30%' }}
-                    />
-                  </div>
-
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="w-12 h-12 rounded-xl bg-background-accent border border-glass-border flex items-center justify-center text-lg">
-                      {cert.logo}
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="text-xl font-display font-bold text-foreground mb-2">
-                        {cert.title}
-                      </h4>
-                      <div className="text-neon-cyan font-semibold mb-1">{cert.issuer}</div>
-                      <div className="text-sm text-foreground-muted">Expected: {cert.expectedDate}</div>
-                    </div>
-                  </div>
-
-                  <p className="text-foreground-muted leading-relaxed">
-                    {cert.description}
-                  </p>
-
-                  {/* Status Badge */}
-                  <div className="mt-6">
-                    <span className="px-3 py-1 rounded-full bg-neon-purple/20 text-neon-purple text-sm font-semibold border border-neon-purple/30">
-                      In Progress
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Commitment Statement */}
-          <div className="mt-16 text-center">
-            <div className="bg-gradient-card backdrop-blur-md rounded-3xl p-8 border border-glass-border shadow-card max-w-4xl mx-auto">
-              <h3 className="text-2xl font-display font-semibold text-foreground mb-4">
-                Continuous Learning Commitment
-              </h3>
-              <p className="text-lg text-foreground-muted leading-relaxed">
-                In the rapidly evolving field of AI/ML, staying certified ensures I'm equipped with the latest 
-                knowledge and best practices. My certification journey reflects my commitment to professional 
-                excellence and continuous skill development.
-              </p>
             </div>
           </div>
         </div>

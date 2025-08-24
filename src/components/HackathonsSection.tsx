@@ -5,22 +5,22 @@ const hackathons = [
     name: 'HackTheSpring 2025',
     position: 'Top 10',
     organizer: 'GEC Gandhinagar',
-    date: 'March 2025',
-    participants: '500+',
-    description: 'Developed an innovative AI-powered solution for sustainable agriculture, incorporating machine learning models for crop prediction and optimization.',
+    date: 'February 2025',
+    participants: '150+',
+    description: 'Developed a digital healthcare platform that connects users with nearby pharmacies for real-time medicine availability and empowers doctors with secure access to patient medical records. It enhances accessibility, reduces misdiagnosis, and streamlines pharmacy operations through advanced inventory and sales management.',
     achievement: 'Top 10 Finalist',
-    tech: ['Python', 'TensorFlow', 'Flask', 'React', 'IoT'],
+    tech: ['React', 'MongoDB', 'FastAPI', 'LLMs'  ],
     color: 'neon-cyan'
   },
   {
     name: 'Tic Tech Toe 2025',
     position: 'Top 10',
     organizer: 'DAIICT Gandhinagar',
-    date: 'February 2025',
+    date: 'April 2025',
     participants: '200+',
-    description: 'Built a comprehensive healthcare management system using AI for patient diagnosis assistance and treatment recommendations.',
+    description: 'Developed a web-based learning and interview preparation platform featuring AI-powered mock interviews, peer-to-peer video GDs, a live code editor, and blockchain-backed payments. Aimed at helping students get placement-ready with interactive tools and career guidance.',
     achievement: 'Top 10 out of 200+ teams',
-    tech: ['Next.js', 'Python', 'FastAPI', 'MongoDB', 'AI/ML'],
+    tech: ['Next.js', 'Python', 'FastAPI', 'Blockchain', 'AI/ML'],
     color: 'neon-purple'
   }
 ];
@@ -160,7 +160,7 @@ const HackathonsSection = () => {
                   <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-primary flex items-center justify-center">
                     <span className="text-2xl">🚀</span>
                   </div>
-                  <div className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-2">2</div>
+                  <div className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-2">4</div>
                   <div className="text-sm text-foreground-muted">Innovative Solutions</div>
                 </div>
               </div>

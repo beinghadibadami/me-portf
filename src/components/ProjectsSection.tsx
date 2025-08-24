@@ -3,28 +3,31 @@ import { Button } from '@/components/ui/button';
 
 const projects = [
   {
-    title: 'CodeBase Chat',
-    description: 'RAG-based GitHub/code understanding chatbot that helps developers navigate and understand large codebases using vector search and LLM capabilities.',
-    tech: ['Python', 'RAG', 'Vector Search', 'LLM', 'FastAPI'],
-    github: 'https://github.com/hadibadami/codebase-chat',
-    demo: 'https://codebase-chat.demo.com',
-    featured: true
-  },
-  {
     title: 'Shakbhaji',
-    description: 'AI-powered system for fruit and vegetable quality assessment and price prediction using computer vision and machine learning models.',
-    tech: ['TensorFlow', 'Computer Vision', 'Price Prediction', 'Flask', 'OpenCV'],
-    github: 'https://github.com/hadibadami/shakbhaji',
-    demo: 'https://shakbhaji.demo.com',
+    description: 'AI-powered system for fruit and vegetable quality assessment and Real-time market price Scraping using Beautiful Soup & LLMs.',
+    tech: ['Next.js', 'Market Price Scraping', 'FastAPI', 'LLM'],
+    github: 'https://github.com/beinghadibadami/shakbhaji',
+    demo: 'https://vegvision.onrender.com',
+    video: '/videos/vegvision_demo.mp4',
     featured: true
   },
   {
-    title: 'Car Data Pipeline',
-    description: 'Comprehensive data pipeline for scraping car information, enriching metadata, and integrating rating systems for automotive platforms.',
-    tech: ['Web Scraping', 'Data Pipeline', 'MongoDB', 'API Integration', 'Data Enrichment'],
-    github: 'https://github.com/hadibadami/car-data-pipeline',
-    demo: null,
-    featured: false
+    title: 'CodeBase Chat',
+    description: 'RAG-based GitHub Repo understanding chatbot that helps developers navigate and understand large codebases using vector search and LLM capabilities.',
+    tech: ['Python', 'RAG', 'Vector Search', 'LLM', 'FastAPI','Pinecone'],
+    github: 'https://github.com/beinghadibadami/codebase-rag',
+    // demo: 'https://codebase-chat.demo.com',
+    video: '/videos/codebase_demo.mp4',
+    featured: true
+  },
+  {
+    title: 'Freelance Project',
+    description: 'Comprehensive data pipeline for scraping car information, reviews, enriching metadata, dealer & service center data for a Client.',
+    tech: ['Web Scraping', 'Data Pipeline', 'PostgreSQL', 'Data Migration', 'Google Reviews Scraping'],
+    // github: 'https://github.com/hadibadami/car-data-pipeline',
+    video: '/videos/carphd_demo.mp4', 
+    demo: "https://carphd.com",
+    featured: true
   }
 ];
 
@@ -37,11 +40,11 @@ const ProjectsSection = () => {
           <div className="text-center mb-16">
             <h2 className="text-5xl font-display font-bold mb-4">
               <span className="bg-gradient-primary bg-clip-text text-transparent">
-                Featured Projects
+                Check Out My Recent Projects !
               </span>
             </h2>
             <p className="text-xl text-foreground-muted max-w-2xl mx-auto">
-              Showcasing innovative AI/ML solutions that solve real-world problems
+             Along with the demo and GitHub links, explore some of my featured projects below.
             </p>
             <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full mt-6" />
           </div>
@@ -96,6 +99,7 @@ const ProjectsSection = () => {
 
                       {/* Action Buttons */}
                       <div className="flex gap-4">
+                        {project.github && (
                         <Button
                           size="sm"
                           className="bg-gradient-primary hover:shadow-glow transition-all duration-300"
@@ -103,9 +107,10 @@ const ProjectsSection = () => {
                         >
                           <a href={project.github} target="_blank" rel="noopener noreferrer">
                             <Github className="w-4 h-4 mr-2" />
-                            Code
+                            GitHub
                           </a>
                         </Button>
+                          )}
                         {project.demo && (
                           <Button
                             variant="outline"
@@ -123,26 +128,31 @@ const ProjectsSection = () => {
                     </div>
 
                     {/* Visual Element for Featured Projects */}
-                    {project.featured && (
-                      <div className="relative">
-                        <div className="bg-background-accent rounded-2xl p-6 border border-glass-border">
-                          <div className="font-mono text-sm text-foreground-muted space-y-2">
-                            <div className="text-neon-cyan">// Project Architecture</div>
-                            <div className="pl-4">
-                              <div>├── Data Processing</div>
-                              <div>├── AI/ML Models</div>
-                              <div>├── Vector Database</div>
-                              <div>├── API Layer</div>
-                              <div>└── Frontend Interface</div>
-                            </div>
-                          </div>
-                        </div>
+                   {/* {project.featured && ( */}
+                    <div className="relative">
+                      <div className="bg-background-accent rounded-2xl border border-glass-border overflow-hidden">
                         
-                        {/* Floating Elements */}
-                        <div className="absolute -top-2 -right-2 w-6 h-6 bg-neon-cyan/30 rounded-full blur-sm animate-float" />
-                        <div className="absolute -bottom-2 -left-2 w-8 h-8 bg-neon-purple/30 rounded-full blur-sm animate-float" style={{ animationDelay: '1s' }} />
+                          <video
+                            
+                            className="w-full h-80 object-cover rounded-2xl cursor-pointer hover:opacity-90 transition"
+                            autoPlay
+                            muted
+                            loop
+                            // controls
+                            // playsInline
+                          >
+                          <source src={project.video} type="video/mp4" />
+                          </video>
+                        {/* </a> */}
                       </div>
-                    )}
+
+    {/* Floating Elements */}
+                    <div className="absolute -top-2 -right-2 w-6 h-6 bg-neon-cyan/30 rounded-full blur-sm animate-float" />
+                    <div className="absolute -bottom-2 -left-2 w-8 h-8 bg-neon-purple/30 rounded-full blur-sm animate-float" style={{ animationDelay: '0.5s' }} />
+                  </div>
+
+
+
                   </div>
                 </div>
               </div>
@@ -157,7 +167,7 @@ const ProjectsSection = () => {
               className="border-glass-border bg-glass hover:bg-glass-hover backdrop-blur-sm text-lg px-8 py-6 rounded-2xl font-semibold"
               asChild
             >
-              <a href="https://github.com/hadibadami" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/beinghadibadami" target="_blank" rel="noopener noreferrer">
                 <Github className="w-5 h-5 mr-2" />
                 View All Projects on GitHub
               </a>

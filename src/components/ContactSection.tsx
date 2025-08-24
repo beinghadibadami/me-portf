@@ -41,8 +41,8 @@ const ContactSection = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'hadi.badami@gmail.com',
-      href: 'mailto:hadi.badami@gmail.com',
+      value: 'hadibadami14@gmail.com',
+      href: 'mailto:hadibadami14@gmail.com',
       color: 'neon-cyan'
     },
     {
@@ -58,13 +58,13 @@ const ContactSection = () => {
     {
       icon: Github,
       label: 'GitHub',
-      href: 'https://github.com/hadibadami',
-      username: '@hadibadami'
+      href: 'https://github.com/beinghadibadami',
+      username: 'beinghadibadami'
     },
     {
       icon: Linkedin,
       label: 'LinkedIn',
-      href: 'https://linkedin.com/in/hadibadami',
+      href: 'https://linkedin.com/in/hadi-badami',
       username: 'Hadi Badami'
     }
   ];
@@ -162,7 +162,7 @@ const ContactSection = () => {
           <div className="mt-16 text-center">
             <div className="bg-gradient-card backdrop-blur-md rounded-3xl p-8 border border-glass-border shadow-card">
               <p className="text-foreground-muted mb-4">
-                © 2025 Hadi Badami. Built with passion for AI/ML and beautiful design.
+                © 2025 Hadi Badami.
               </p>
               <p className="text-sm text-foreground-muted">
                 "It is what it is." - Let's make it better together.

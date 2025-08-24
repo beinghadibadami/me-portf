@@ -1,4 +1,31 @@
+import {Typewriter} from 'react-simple-typewriter'
+import { useEffect, useRef, useState } from 'react';
 const AboutSection = () => {
+
+
+  const [isInView, setIsInView] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.disconnect(); // trigger only once
+        }
+      },
+      { threshold: 0.5 } // trigger when 50% of element is visible
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) observer.unobserve(ref.current);
+    };
+  }, []);
+
   return (
     <section id="about" className="py-20 relative">
       <div className="container mx-auto px-6">
@@ -18,39 +45,39 @@ const AboutSection = () => {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               {/* Text Content */}
               <div className="space-y-6">
-                <h3 className="text-3xl font-display font-semibold text-foreground mb-6">
-                  Independent & Forward-Thinking
+                <h3 className="text-5xl font-display font-semibold text-foreground mb-6"
+                ref={ref}>
+                  {isInView && (
+                   <Typewriter
+                    words={["Hi, I'm Hadi."]}
+                    loop={0} // type once
+                    cursor
+                    cursorStyle="|"
+                    typeSpeed={75} // adjust typing speed
+                  />
+                  )}
                 </h3>
-                
                 <p className="text-lg text-foreground-muted leading-relaxed">
-                  I'm an AI/ML engineer who thrives on solving complex problems with innovative solutions. 
-                  My approach is different from the crowd – I believe in deep understanding over surface-level implementations.
-                </p>
-                
-                <p className="text-lg text-foreground-muted leading-relaxed">
-                  Knowledge-driven and independent, I specialize in building intelligent systems that make a real impact. 
-                  From RAG-based chatbots to predictive models, I craft solutions that bridge the gap between 
-                  cutting-edge research and practical applications.
+                  Tech enthusiast from Ahmedabad, India, I like exploring ideas differently than most. Always chasing knowledge ahead of the curve, I prefer building and learning my own way rather than following the crowd.
                 </p>
 
                 <p className="text-lg text-foreground-muted leading-relaxed">
-                  When I'm not building AI systems, you'll find me exploring the latest research papers, 
-                  contributing to open-source projects, or mentoring fellow developers in the world of machine learning.
+                  With experience in Data Scraping, RAG Systems, working with LLMs, and building predictive/NLP models. Skilled in scalable API development using Python, FastAPI, Node.js, with strong proficiency in vector databases like Pinecone.
                 </p>
 
                 {/* Stats */}
                 <div className="grid grid-cols-3 gap-6 pt-8">
                   <div className="text-center">
                     <div className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent">3+</div>
-                    <div className="text-sm text-foreground-muted">Years Experience</div>
+                    <div className="text-sm text-foreground-muted">Years Of Coding Experience</div>
                   </div>
                   <div className="text-center">
                     <div className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent">10+</div>
                     <div className="text-sm text-foreground-muted">Projects Completed</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent">270+</div>
-                    <div className="text-sm text-foreground-muted">Data Points Enriched</div>
+                    <div className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent">4</div>
+                    <div className="text-sm text-foreground-muted">Hackathons </div>
                   </div>
                 </div>
               </div>
@@ -61,7 +88,7 @@ const AboutSection = () => {
                   <div className="space-y-4">
                     <div className="flex items-center space-x-3">
                       <div className="w-3 h-3 bg-neon-cyan rounded-full animate-glow" />
-                      <span className="font-mono text-sm text-foreground-muted">Building intelligent systems</span>
+                      <span className="font-mono text-sm text-foreground-muted">Building intelligent systems (Using LLMs)</span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <div className="w-3 h-3 bg-neon-purple rounded-full animate-glow" style={{ animationDelay: '0.5s' }} />
