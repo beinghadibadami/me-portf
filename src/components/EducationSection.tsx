@@ -120,16 +120,16 @@ const EducationSection = () => {
               </p>
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="text-center">
-                  <div className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent">3.8+</div>
-                  <div className="text-sm text-foreground-muted">GPA</div>
+                  <div className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent">9+</div>
+                  <div className="text-sm text-foreground-muted">CGPA</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent">5+</div>
                   <div className="text-sm text-foreground-muted">Academic Projects</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent">2</div>
-                  <div className="text-sm text-foreground-muted">Hackathon Wins</div>
+                  <div className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent">4</div>
+                  <div className="text-sm text-foreground-muted">Hackathons</div>
                 </div>
               </div>
             </div>

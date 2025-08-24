@@ -2,35 +2,36 @@ import { Briefcase, MapPin, Calendar, ExternalLink } from 'lucide-react';
 
 const experiences = [
   {
-    title: 'Freelance AI/ML Developer',
+    title: 'Freelance Data Scraping Work',
     company: 'Independent',
     location: 'Remote',
-    period: '2023 – Present',
+    period: 'July 2025 – Present',
     type: 'Freelance',
-    description: 'Specialized in developing AI-powered solutions for various clients, focusing on data pipelines, machine learning models, and web scraping projects.',
+    description: 'Enhanced an existing car platform by adding 270+ new car data, dealer info, dynamic UI features, and an AI-powered chatbot.',
     achievements: [
-      'Built comprehensive car data pipeline enriching 270+ vehicle records',
-      'Implemented advanced web scraping systems with 95% accuracy',
-      'Developed custom ML models for price prediction and quality assessment',
-      'Created scalable APIs serving 1000+ requests per hour'
+      'Uploaded and enriched content for 270+ new cars with metadata (name, variant, fuel type,transmission, images, key specs)',
+      'Integrated reviews and ratings with reviewer details and calculated average ratings for cars',
+      'Scraped dealer & service center data for Delhi NCR with filters for ratings and review counts',
+      'Developed dynamic homepage widgets for top-rated cars and auto-updating car comparisons',
+      'Developed a chatbot using LLMs to answer user queries about car features and comparisons',
     ],
-    tech: ['Python', 'FastAPI', 'MongoDB', 'Web Scraping', 'ML Models', 'Data Pipeline'],
+    tech: ['Python', 'Beatutiful Soup', 'Selenium', 'Web Scraping', 'PostgreSQL', 'Data Pipeline'],
     featured: true
   },
   {
-    title: 'AI/ML Engineering Intern',
-    company: 'TechCorp Solutions',
+    title: 'Web Development Intern',
+    company: 'Impero IT Services Pvt Ltd',
     location: 'Ahmedabad, India',
-    period: 'Summer 2024',
+    period: 'Summer 2023',
     type: 'Internship',
-    description: 'Gained hands-on experience in machine learning model development and deployment, working on real-world AI applications.',
-    achievements: [
-      'Contributed to customer behavior prediction model with 87% accuracy',
-      'Optimized data preprocessing pipeline reducing processing time by 40%',
-      'Collaborated with senior engineers on production ML system',
-      'Participated in code reviews and agile development practices'
-    ],
-    tech: ['Python', 'scikit-learn', 'pandas', 'Flask', 'Git', 'Docker'],
+    description: 'Gained hands-on experience in web development fundamentals, backend logic and project deployment basics.',
+    // achievements: [
+    //   'Contributed to customer behavior prediction model with 87% accuracy',
+    //   'Optimized data preprocessing pipeline reducing processing time by 40%',
+    //   'Collaborated with senior engineers on production ML system',
+    //   'Participated in code reviews and agile development practices'
+    // ],
+    tech: ['Node.js', 'Express.js', 'MongoDB'],
     featured: false
   }
 ];
@@ -117,6 +118,7 @@ const ExperienceSection = () => {
                       </p>
 
                       {/* Key Achievements */}
+                      {(exp.achievements && exp.achievements.length > 0) && (
                       <div className="mb-6">
                         <h5 className="text-lg font-semibold text-foreground mb-4">Key Achievements:</h5>
                         <ul className="space-y-3">
@@ -128,6 +130,7 @@ const ExperienceSection = () => {
                           ))}
                         </ul>
                       </div>
+                      )}
 
                       {/* Technologies */}
                       <div>
@@ -160,13 +163,13 @@ const ExperienceSection = () => {
                               <div className="text-sm text-foreground-muted">Accuracy Rate</div>
                             </div>
                             <div>
-                              <div className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">1K+</div>
-                              <div className="text-sm text-foreground-muted">API Requests/Hour</div>
+                              <div className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">50K+</div>
+                              <div className="text-sm text-foreground-muted">New Reviews Scraped</div>
                             </div>
                           </div>
                         </div>
 
-                        <div className="bg-background-accent rounded-2xl p-6 border border-glass-border">
+                        {/* <div className="bg-background-accent rounded-2xl p-6 border border-glass-border">
                           <h5 className="text-lg font-semibold text-foreground mb-4">Client Feedback</h5>
                           <blockquote className="text-foreground-muted italic">
                             "Exceptional work quality and attention to detail. Delivered beyond expectations."
@@ -176,7 +179,7 @@ const ExperienceSection = () => {
                               <span key={i} className="text-neon-cyan">⭐</span>
                             ))}
                           </div>
-                        </div>
+                        </div> */}
                       </div>
                     )}
                   </div>
@@ -186,7 +189,7 @@ const ExperienceSection = () => {
           </div>
 
           {/* Career Goals */}
-          <div className="mt-12">
+          {/* <div className="mt-12">
             <div className="bg-gradient-card backdrop-blur-md rounded-2xl p-6 border border-glass-border shadow-card max-w-3xl mx-auto text-center">
               <h3 className="text-2xl font-display font-semibold text-foreground mb-4">
                 Looking Forward
@@ -208,7 +211,7 @@ const ExperienceSection = () => {
                 </span>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
