@@ -8,16 +8,16 @@ const projects = [
     tech: ['Next.js', 'Market Price Scraping', 'FastAPI', 'LLM'],
     github: 'https://github.com/beinghadibadami/shakbhaji',
     demo: 'https://vegvision.onrender.com',
-    video: '/videos/vegvision_demo.mp4',
+    video: '/videos/vegvision-demo.mp4',
     featured: true
   },
   {
     title: 'CodeBase Chat',
     description: 'RAG-based GitHub Repo understanding chatbot that helps developers navigate and understand large codebases using vector search and LLM capabilities.',
     tech: ['Python', 'RAG', 'Vector Search', 'LLM', 'FastAPI','Pinecone'],
-    github: 'https://github.com/beinghadibadami/codebase-rag',
-    // demo: 'https://codebase-chat.demo.com',
-    video: '/videos/codebase_demo.mp4',
+    github: 'https://github.com/beinghadibadami/codechat-ai',
+    demo: 'https://codechat-jgxg.onrender.com/',
+    video: '/videos/codechat-demo.mp4',
     featured: true
   },
   {
@@ -138,6 +138,7 @@ const ProjectsSection = () => {
                             autoPlay
                             muted
                             loop
+                            preload='metadata'
                             // controls
                             // playsInline
                           >
