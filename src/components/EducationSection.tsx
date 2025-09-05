@@ -39,59 +39,63 @@ const EducationSection = () => {
 
           {/* Timeline */}
           <div className="relative">
-            {/* Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-px h-full w-0.5 bg-gradient-primary rounded-full" />
+            {/* Timeline Lines */}
+            <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-primary rounded-full md:hidden" />
+            <div className="hidden md:block absolute left-1/2 -translate-x-px top-0 bottom-0 w-0.5 bg-gradient-primary rounded-full" />
 
-            <div className="space-y-12">
+            <div className="space-y-8 md:space-y-12">
               {education.map((edu, index) => (
                 <div
                   key={edu.degree}
-                  className={`relative flex items-center ${
-                    index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
+                  className={`relative flex flex-col md:items-center ${
+                    index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
                   }`}
                 >
-                  {/* Timeline Node */}
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-primary rounded-full border-4 border-background shadow-glow z-10" />
+                  {/* Timeline Nodes */}
+                  <div className="absolute left-4 -translate-x-1/2 w-6 h-6 bg-gradient-primary rounded-full border-4 border-background shadow-glow z-10 md:hidden" />
+                  <div className="hidden md:block absolute left-1/2 -translate-x-1/2 w-6 h-6 bg-gradient-primary rounded-full border-4 border-background shadow-glow z-10" />
 
                   {/* Content Card */}
-                  <div className={`w-5/12 ${index % 2 === 0 ? 'pr-6' : 'pl-6'}`}>
-                    <div className="bg-gradient-card backdrop-blur-md rounded-2xl p-6 border border-glass-border shadow-card hover:shadow-glow transition-all duration-500 group">
-                      {/* Status Badge */}
-                      <div className="flex justify-between items-start mb-4">
-                        <span className={`px-3 py-1 rounded-full text-sm font-semibold ${
-                          edu.status === 'Current' 
-                            ? 'bg-gradient-primary text-background' 
-                            : 'bg-background-accent text-foreground-muted border border-glass-border'
-                        }`}>
+                  <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:pr-6' : 'md:pl-6'} min-w-0`}>
+                    <div className="bg-gradient-card backdrop-blur-md rounded-2xl p-4 md:p-6 border border-glass-border shadow-card hover:shadow-glow transition-all duration-500 group">
+                      {/* Status Badge + Period */}
+                      <div className="flex flex-wrap items-start justify-between gap-2 mb-3">
+                        <span
+                          className={`px-3 py-1 rounded-full text-xs md:text-sm font-semibold ${
+                            edu.status === 'Current'
+                              ? 'bg-gradient-primary text-background'
+                              : 'bg-background-accent text-foreground-muted border border-glass-border'
+                          }`}
+                        >
                           {edu.status}
                         </span>
-                        <span className="text-sm font-mono text-foreground-muted">
+                        <span className="text-xs md:text-sm font-mono text-foreground-muted break-words">
                           {edu.period}
                         </span>
                       </div>
 
-                      {/* Degree & Institution */}
-                      <h3 className="text-2xl font-display font-bold text-foreground mb-2">
+                      {/* Titles */}
+                      <h3 className="text-lg md:text-2xl font-display font-bold text-foreground mb-1 break-words">
                         {edu.degree}
                       </h3>
-                      <h4 className="text-lg font-semibold text-neon-cyan mb-1">
+                      <h4 className="text-base md:text-lg font-semibold text-neon-cyan mb-1 break-words">
                         {edu.institution}
                       </h4>
-                      <p className="text-foreground-muted mb-4">📍 {edu.location}</p>
+                      <p className="text-sm md:text-base text-foreground-muted mb-3 break-words">📍 {edu.location}</p>
 
                       {/* Description */}
-                      <p className="text-foreground-muted leading-relaxed mb-6">
+                      <p className="text-sm md:text-base text-foreground-muted leading-relaxed mb-5 break-words">
                         {edu.description}
                       </p>
 
                       {/* Highlights */}
                       <div className="space-y-2">
-                        <h5 className="text-sm font-semibold text-foreground mb-3">Key Focus Areas:</h5>
+                        <h5 className="text-xs md:text-sm font-semibold text-foreground mb-2">Key Focus Areas:</h5>
                         <div className="flex flex-wrap gap-2">
                           {edu.highlights.map((highlight) => (
                             <span
                               key={highlight}
-                              className="px-3 py-1 rounded-full bg-background-accent border border-glass-border text-sm text-foreground-muted font-mono"
+                              className="px-3 py-1 rounded-full bg-background-accent border border-glass-border text-xs md:text-sm text-foreground-muted font-mono break-words"
                             >
                               {highlight}
                             </span>
@@ -101,8 +105,8 @@ const EducationSection = () => {
                     </div>
                   </div>
 
-                  {/* Empty space for opposite side */}
-                  <div className="w-5/12" />
+                  {/* Spacer on desktop only */}
+                  <div className="hidden md:block md:w-5/12" />
                 </div>
               ))}
             </div>
@@ -139,5 +143,4 @@ const EducationSection = () => {
     </section>
   );
 };
-
 export default EducationSection;
