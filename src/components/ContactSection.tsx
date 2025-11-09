@@ -81,7 +81,7 @@ const ContactSection = () => {
               </span>
             </h2>
             <p className="text-xl text-foreground-muted max-w-2xl mx-auto">
-              Ready to collaborate on exciting AI/ML projects? Let's discuss how we can work together.
+              Ready to collaborate on exciting AI/ML & Full Stack projects? Let's discuss how we can work together.
             </p>
             <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full mt-6" />
           </div>

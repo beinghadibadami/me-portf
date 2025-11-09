@@ -16,7 +16,7 @@ const experiences = [
       'Developed a chatbot using LLMs to answer user queries about car features and comparisons',
     ],
     tech: ['Python', 'Beatutiful Soup', 'Selenium', 'Web Scraping', 'PostgreSQL', 'Data Pipeline'],
-    featured: true
+    // featured: true
   },
   {
     title: 'Web Development Intern',

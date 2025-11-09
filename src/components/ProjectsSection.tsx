@@ -1,5 +1,6 @@
 import { ExternalLink, Github } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import InfiniteMenu from '@/components/InfiniteMenu';
 
 const projects = [
   {
@@ -28,6 +29,15 @@ const projects = [
     video: '/videos/carphd_demo.mp4', 
     demo: "https://carphd.com",
     featured: true
+  },
+  {
+    title: 'Religious Chatbot',
+    description: 'An AI-powered Islamic knowledge assistant that answers questions using Ayatullah al-Sistani rulings, with verified references through a custom RAG system.',
+    tech: ['Python', 'RAG', 'FAISS', 'LLM', 'FastAPI'],
+    github: 'https://github.com/beinghadibadami/sistani-chatbot/',
+    video: '/videos/carphd_demo.mp4', 
+    demo: "https://google.com",
+    featured: true
   }
 ];
 
@@ -37,135 +47,39 @@ const ProjectsSection = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-7xl mx-auto">
           {/* Section Title */}
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-display font-bold mb-4">
+          <div className="text-center mb-8 sm:mb-12 md:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-3 sm:mb-4 px-4">
               <span className="bg-gradient-primary bg-clip-text text-transparent">
                 Check Out My Recent Projects !
               </span>
             </h2>
-            <p className="text-xl text-foreground-muted max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-foreground-muted max-w-2xl mx-auto px-4">
              Along with the demo and GitHub links, explore some of my featured projects below.
             </p>
-            <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full mt-6" />
+            <div className="w-16 sm:w-20 md:w-24 h-1 bg-gradient-primary mx-auto rounded-full mt-4 sm:mt-6" />
           </div>
 
-          {/* Projects Grid */}
-          <div className="grid lg:grid-cols-2 gap-8">
-            {projects.map((project, index) => (
-              <div
-                key={project.title}
-                className={`group relative bg-gradient-card backdrop-blur-md rounded-3xl border border-glass-border shadow-card hover:shadow-glow transition-all duration-500 overflow-hidden ${
-                  project.featured ? 'lg:col-span-2' : ''
-                }`}
-              >
-                {/* Hover Effect Background */}
-                <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-5 transition-opacity duration-500" />
-                
-                <div className={`p-6 ${project.featured ? 'md:p-8' : ''}`}>
-                  <div className={`${project.featured ? 'grid md:grid-cols-2 gap-8 items-center' : ''}`}>
-                    <div>
-                      {/* Project Badge */}
-                      {project.featured && (
-                        <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-primary text-background text-sm font-semibold mb-4">
-                          ⭐ Featured Project
-                        </div>
-                      )}
-
-                      {/* Project Title */}
-                      <h3 className={`font-display font-bold text-foreground mb-4 ${
-                        project.featured ? 'text-4xl' : 'text-2xl'
-                      }`}>
-                        {project.title}
-                      </h3>
-
-                      {/* Description */}
-                      <p className={`text-foreground-muted leading-relaxed mb-6 ${
-                        project.featured ? 'text-lg' : 'text-base'
-                      }`}>
-                        {project.description}
-                      </p>
-
-                      {/* Tech Stack */}
-                      <div className="flex flex-wrap gap-2 mb-8">
-                        {project.tech.map((tech) => (
-                          <span
-                            key={tech}
-                            className="px-3 py-1 rounded-full bg-background-accent border border-glass-border text-sm text-foreground-muted font-mono"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-
-                      {/* Action Buttons */}
-                      <div className="flex gap-4">
-                        {project.github && (
-                        <Button
-                          size="sm"
-                          className="bg-gradient-primary hover:shadow-glow transition-all duration-300"
-                          asChild
-                        >
-                          <a href={project.github} target="_blank" rel="noopener noreferrer">
-                            <Github className="w-4 h-4 mr-2" />
-                            GitHub
-                          </a>
-                        </Button>
-                          )}
-                        {project.demo && (
-                          <Button
-                            variant="outline"
-                            size="sm"
-                            className="border-glass-border bg-glass hover:bg-glass-hover backdrop-blur-sm"
-                            asChild
-                          >
-                            <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                              <ExternalLink className="w-4 h-4 mr-2" />
-                              Demo
-                            </a>
-                          </Button>
-                        )}
-                      </div>
-                    </div>
-
-                    {/* Visual Element for Featured Projects */}
-                   {/* {project.featured && ( */}
-                    <div className="relative">
-                      <div className="bg-background-accent rounded-2xl border border-glass-border overflow-hidden">
-                        
-                          <video
-                            
-                            className="w-full h-80 object-cover rounded-2xl cursor-pointer hover:opacity-90 transition"
-                            autoPlay
-                            muted
-                            loop
-                            preload='metadata'
-                            // controls
-                            // playsInline
-                          >
-                          <source src={project.video} type="video/mp4" />
-                          </video>
-                        {/* </a> */}
-                      </div>
-
-    {/* Floating Elements */}
-                    <div className="absolute -top-2 -right-2 w-6 h-6 bg-neon-cyan/30 rounded-full blur-sm animate-float" />
-                    <div className="absolute -bottom-2 -left-2 w-8 h-8 bg-neon-purple/30 rounded-full blur-sm animate-float" style={{ animationDelay: '0.5s' }} />
-                  </div>
-
-
-
-                  </div>
-                </div>
-              </div>
-            ))}
+          {/* Infinite Menu Projects Display */}
+          <div style={{ height: '450px', position: 'relative' }} className="mt-4 sm:mt-6 md:mt-8 sm:h-[500px] md:h-[550px] lg:h-[600px]">
+            <InfiniteMenu
+              items={projects.map((project) => ({
+                video: project.video,
+                title: project.title,
+                description: project.description,
+                tech: project.tech,
+                github: project.github,
+                demo: project.demo,
+                link: project.demo || project.github
+              }))}
+            />
           </div>
 
           {/* View More Button */}
-          <div className="text-center mt-16">
+          <div className="text-center mt-8 sm:mt-12 md:mt-16">
             <Button
               variant="outline"
               size="lg"
-              className="border-glass-border bg-glass hover:bg-glass-hover backdrop-blur-sm text-lg px-8 py-6 rounded-2xl font-semibold"
+              className="border-glass-border bg-glass hover:bg-glass-hover backdrop-blur-sm text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 rounded-xl sm:rounded-2xl font-semibold"
               asChild
             >
               <a href="https://github.com/beinghadibadami" target="_blank" rel="noopener noreferrer">
