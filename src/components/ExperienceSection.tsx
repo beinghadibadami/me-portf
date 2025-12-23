@@ -3,20 +3,32 @@ import { Briefcase, MapPin, Calendar, ExternalLink } from 'lucide-react';
 const experiences = [
   {
     title: 'Freelance Data Scraping Work',
-    company: 'Independent',
+    company: 'CarPHD',
     location: 'Remote',
-    period: 'July 2025 – Present',
+    period: 'August 2025',
     type: 'Freelance',
     description: 'Enhanced an existing car platform by adding 270+ new car data, dealer info, dynamic UI features, and an AI-powered chatbot.',
     achievements: [
-      'Uploaded and enriched content for 270+ new cars with metadata (name, variant, fuel type,transmission, images, key specs)',
       'Integrated reviews and ratings with reviewer details and calculated average ratings for cars',
       'Scraped dealer & service center data for Delhi NCR with filters for ratings and review counts',
-      'Developed dynamic homepage widgets for top-rated cars and auto-updating car comparisons',
       'Developed a chatbot using LLMs to answer user queries about car features and comparisons',
     ],
     tech: ['Python', 'Beatutiful Soup', 'Selenium', 'Web Scraping', 'PostgreSQL', 'Data Pipeline'],
     // featured: true
+  },
+  {
+    title: 'Freelance IT Website',
+    company: 'DivineSyncServe',
+    location: 'Remote',
+    period: 'December 2025',
+    type: 'Freelance',
+    description: 'Developed a core PHP based website for an IT Company within given time constraint.',
+    achievements: [
+      'JWT Auth',
+      'HDFC SmartGateway For Payments',
+      'MongoDB to store transactions and user data',
+    ],
+    tech: ['PHP', 'HDFC SmartGateway', 'JWT Auth', 'MongoDB'],
   },
   {
     title: 'Web Development Intern',
@@ -59,9 +71,8 @@ const ExperienceSection = () => {
             {experiences.map((exp, index) => (
               <div
                 key={`${exp.company}-${exp.title}`}
-                className={`relative bg-gradient-card backdrop-blur-md rounded-3xl border border-glass-border shadow-card hover:shadow-glow transition-all duration-500 overflow-hidden ${
-                  exp.featured ? 'ring-2 ring-neon-cyan/30' : ''
-                }`}
+                className={`relative bg-gradient-card backdrop-blur-md rounded-3xl border border-glass-border shadow-card hover:shadow-glow transition-all duration-500 overflow-hidden ${exp.featured ? 'ring-2 ring-neon-cyan/30' : ''
+                  }`}
               >
                 {/* Featured Badge */}
                 {exp.featured && (
@@ -82,9 +93,8 @@ const ExperienceSection = () => {
                           <Briefcase className="w-8 h-8 text-background" />
                         </div>
                         <div className="flex-1">
-                          <h3 className={`font-display font-bold text-foreground mb-2 ${
-                            exp.featured ? 'text-3xl' : 'text-2xl'
-                          }`}>
+                          <h3 className={`font-display font-bold text-foreground mb-2 ${exp.featured ? 'text-3xl' : 'text-2xl'
+                            }`}>
                             {exp.title}
                           </h3>
                           <h4 className="text-xl font-semibold text-neon-cyan mb-2">
@@ -99,11 +109,10 @@ const ExperienceSection = () => {
                               <Calendar className="w-4 h-4" />
                               <span className="text-sm">{exp.period}</span>
                             </div>
-                            <span className={`px-3 py-1 rounded-full text-sm font-semibold ${
-                              exp.type === 'Freelance' 
-                                ? 'bg-neon-purple/20 text-neon-purple border border-neon-purple/30'
-                                : 'bg-neon-cyan/20 text-neon-cyan border border-neon-cyan/30'
-                            }`}>
+                            <span className={`px-3 py-1 rounded-full text-sm font-semibold ${exp.type === 'Freelance'
+                              ? 'bg-neon-purple/20 text-neon-purple border border-neon-purple/30'
+                              : 'bg-neon-cyan/20 text-neon-cyan border border-neon-cyan/30'
+                              }`}>
                               {exp.type}
                             </span>
                           </div>
@@ -111,25 +120,24 @@ const ExperienceSection = () => {
                       </div>
 
                       {/* Description */}
-                      <p className={`text-foreground-muted leading-relaxed mb-6 ${
-                        exp.featured ? 'text-lg' : 'text-base'
-                      }`}>
+                      <p className={`text-foreground-muted leading-relaxed mb-6 ${exp.featured ? 'text-lg' : 'text-base'
+                        }`}>
                         {exp.description}
                       </p>
 
                       {/* Key Achievements */}
                       {(exp.achievements && exp.achievements.length > 0) && (
-                      <div className="mb-6">
-                        <h5 className="text-lg font-semibold text-foreground mb-4">Key Achievements:</h5>
-                        <ul className="space-y-3">
-                          {exp.achievements.map((achievement, achieveIndex) => (
-                            <li key={achieveIndex} className="flex items-start gap-3">
-                              <div className="w-2 h-2 bg-neon-cyan rounded-full mt-2 flex-shrink-0" />
-                              <span className="text-foreground-muted leading-relaxed">{achievement}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
+                        <div className="mb-6">
+                          <h5 className="text-lg font-semibold text-foreground mb-4">Key Achievements:</h5>
+                          <ul className="space-y-3">
+                            {exp.achievements.map((achievement, achieveIndex) => (
+                              <li key={achieveIndex} className="flex items-start gap-3">
+                                <div className="w-2 h-2 bg-neon-cyan rounded-full mt-2 flex-shrink-0" />
+                                <span className="text-foreground-muted leading-relaxed">{achievement}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
                       )}
 
                       {/* Technologies */}

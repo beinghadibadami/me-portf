@@ -4,30 +4,39 @@ import InfiniteMenu from '@/components/InfiniteMenu';
 
 const projects = [
   {
-    title: 'Shakbhaji',
+    title: 'Vegvision',
     description: 'AI-powered system for fruit and vegetable quality assessment and Real-time market price Scraping using Beautiful Soup & LLMs.',
     tech: ['Next.js', 'Market Price Scraping', 'FastAPI', 'LLM'],
     github: 'https://github.com/beinghadibadami/shakbhaji',
     demo: 'https://vegvision.onrender.com',
     video: '/videos/vegvision-demo.mp4',
-    featured: true
+    featured: false
   },
   {
-    title: 'CodeBase Chat',
+    title: 'CodeChat AI',
     description: 'RAG-based GitHub Repo understanding chatbot that helps developers navigate and understand large codebases using vector search and LLM capabilities.',
-    tech: ['Python', 'RAG', 'Vector Search', 'LLM', 'FastAPI','Pinecone'],
+    tech: ['Python', 'RAG', 'Vector Search', 'LLM', 'FastAPI', 'Pinecone'],
     github: 'https://github.com/beinghadibadami/codechat-ai',
     demo: 'https://codechat-jgxg.onrender.com/',
     video: '/videos/codechat-demo.mp4',
     featured: true
   },
   {
-    title: 'Freelance Project',
+    title: 'CarPHD',
     description: 'Comprehensive data pipeline for scraping car information, reviews, enriching metadata, dealer & service center data for a Client.',
     tech: ['Web Scraping', 'Data Pipeline', 'PostgreSQL', 'Data Migration', 'Google Reviews Scraping'],
     // github: 'https://github.com/hadibadami/car-data-pipeline',
-    video: '/videos/carphd_demo.mp4', 
+    video: '/videos/carphd_demo.mp4',
     demo: "https://carphd.com",
+    featured: true
+  },
+  {
+    title: 'DivineSyncServe',
+    description: 'A core PHP based website for an IT Company.',
+    tech: ['PHP', 'JWT Auth', 'MongoDB', 'HDFC SmartGateway'],
+    // github: 'https://github.com/hadibadami/car-data-pipeline',
+    video: '/videos/divine-demo.mp4',
+    demo: "https://divinesyncserve.com",
     featured: true
   },
   {
@@ -35,9 +44,9 @@ const projects = [
     description: 'An AI-powered Islamic knowledge assistant that answers questions using Ayatullah al-Sistani rulings, with verified references through a custom RAG system.',
     tech: ['Python', 'RAG', 'FAISS', 'LLM', 'FastAPI'],
     github: 'https://github.com/beinghadibadami/sistani-chatbot/',
-    video: '/videos/carphd_demo.mp4', 
-    demo: "https://google.com",
-    featured: true
+    video: '/videos/carphd_demo.mp4',
+    demo: "https://al-sistani-chat.onrender.com/",
+    featured: false
   }
 ];
 
@@ -54,13 +63,13 @@ const ProjectsSection = () => {
               </span>
             </h2>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-foreground-muted max-w-2xl mx-auto px-4">
-             Along with the demo and GitHub links, explore some of my featured projects below.
+              Along with the demo and GitHub links, explore some of my featured projects below.
             </p>
             <div className="w-16 sm:w-20 md:w-24 h-1 bg-gradient-primary mx-auto rounded-full mt-4 sm:mt-6" />
           </div>
 
           {/* Infinite Menu Projects Display */}
-          <div style={{ height: '450px', position: 'relative' }} className="mt-4 sm:mt-6 md:mt-8 sm:h-[500px] md:h-[550px] lg:h-[600px]">
+          <div style={{ position: 'relative' }} className="mt-4 sm:mt-6 md:mt-8 h-[520px] sm:h-[580px] md:h-[650px] lg:h-[700px]">
             <InfiniteMenu
               items={projects.map((project) => ({
                 video: project.video,

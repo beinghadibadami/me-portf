@@ -116,4 +116,22 @@
   ::selection {
     @apply bg-neon-cyan/30 text-foreground;
   }
+
+  /* Infinite Scroll Animation */
+  @keyframes infinite-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-33.333333%);
+    }
+  }
+
+  .animate-infinite-scroll {
+    animation: infinite-scroll 30s linear infinite;
+  }
+
+  .hover-pause:hover {
+    animation-play-state: paused;
+  }
 }
