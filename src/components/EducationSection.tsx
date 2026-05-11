@@ -1,146 +1,189 @@
-const education = [
+import { useState } from 'react';
+import { ChevronDown, ExternalLink } from 'lucide-react';
+
+interface EducationEntry {
+  logo?: string;
+  initial: string;
+  institution: string;
+  degree: string;
+  period: string;
+  link?: string;
+}
+
+interface CertEntry {
+  logo?: string;
+  initial: string;
+  issuer: string;
+  title: string;
+  date: string;
+  description: string;
+  credentialLink?: string;
+}
+
+const education: EducationEntry[] = [
   {
-    degree: 'B.E. Computer Science (Data Science)',
+    initial: 'V',
+    logo: '/logos/vgec.png',
     institution: 'Vishwakarma Govt. Engineering College',
-    location: 'Ahmedabad',
+    degree: 'B.E. Computer Science (Data Science)',
     period: '2024 – Present',
-    status: 'Current',
-    description: 'Specialized in Data Science with focus on machine learning algorithms, statistical analysis, and AI applications.',
-    highlights: ['Machine Learning', 'Data Analytics', 'AI Applications', 'Statistical Computing']
+    link: 'https://www.vgecg.ac.in/',
   },
   {
-    degree: 'Diploma in Computer Engineering',
+    initial: 'G',
+    logo: '/logos/gmb.png',
     institution: 'GMB Polytechnic',
-    location: 'Rajula, Amreli',
+    degree: 'Diploma in Computer Engineering',
     period: '2021 – 2024',
-    status: 'Completed',
-    description: 'Comprehensive foundation in computer engineering with emphasis on programming, software development, and system design.',
-    highlights: ['Programming Fundamentals', 'Software Development', 'Database Systems', 'Web Technologies']
-  }
+    link: 'http://www.gmbpolytechnic.ac.in/',
+  },
+];
+
+const certifications: CertEntry[] = [
+  {
+    initial: 'O',
+    logo: '/logos/oracle_logo.png',
+    issuer: 'Oracle University',
+    title: 'Oracle AI Vector Search Certified',
+    date: 'July 2025',
+    description:
+      'Comprehensive certification covering vector database implementations, similarity search algorithms, and AI-powered search optimization.',
+    credentialLink:
+      'https://catalog-education.oracle.com/ords/certview/sharebadge?id=D2B1D64104F7EC257F0AA496DC34EBC19CD433C8B527499CDAAAD2EC8DA79F12',
+  },
 ];
 
 const EducationSection = () => {
+  const [openCertIndex, setOpenCertIndex] = useState<number | null>(null);
+
+  const toggleCert = (idx: number) => {
+    setOpenCertIndex(prev => (prev === idx ? null : idx));
+  };
+
   return (
-    <section id="education" className="py-20 relative">
-      <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
-          {/* Section Title */}
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-display font-bold mb-4">
-              <span className="bg-gradient-primary bg-clip-text text-transparent">
-                Education
+    <section id="education" className="py-12">
+      <div className="container">
+        <h2 className="text-2xl font-bold text-foreground mb-6">Education</h2>
+
+        <div className="divide-y divide-[hsl(var(--glass-border))]">
+          {education.map((edu) => (
+            <div key={edu.institution} className="w-full flex items-center gap-4 py-4">
+              {edu.logo ? (
+                <img
+                  src={edu.logo}
+                  alt={edu.institution}
+                  className="w-10 h-10 rounded-full object-cover flex-shrink-0"
+                />
+              ) : (
+                <div className="w-10 h-10 rounded-full bg-background-accent border border-[hsl(var(--glass-border))] flex items-center justify-center flex-shrink-0">
+                  <span className="text-sm font-semibold text-foreground">
+                    {edu.initial}
+                  </span>
+                </div>
+              )}
+
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2">
+                  <div className="font-semibold text-foreground text-sm truncate">
+                    {edu.institution}
+                  </div>
+                  {edu.link && (
+                    <a
+                      href={edu.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-foreground-muted hover:text-foreground transition-colors"
+                    >
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  )}
+                </div>
+                <div className="text-foreground-muted text-sm">
+                  {edu.degree}
+                </div>
+              </div>
+
+              <span className="text-foreground-muted text-sm flex-shrink-0">
+                {edu.period}
               </span>
-            </h2>
-            <p className="text-xl text-foreground-muted max-w-2xl mx-auto">
-              Building a strong foundation in computer science and data science
-            </p>
-            <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full mt-6" />
-          </div>
+            </div>
+          ))}
+        </div>
 
-          {/* Timeline */}
-          <div className="relative">
-            {/* Timeline Lines */}
-            <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-primary rounded-full md:hidden" />
-            <div className="hidden md:block absolute left-1/2 -translate-x-px top-0 bottom-0 w-0.5 bg-gradient-primary rounded-full" />
+        {/* Certifications merged here */}
+        {certifications.length > 0 && (
+          <>
+            <h3 className="text-lg font-semibold text-foreground mt-10 mb-4">Certifications</h3>
 
-            <div className="space-y-8 md:space-y-12">
-              {education.map((edu, index) => (
-                <div
-                  key={edu.degree}
-                  className={`relative flex flex-col md:items-center ${
-                    index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                  }`}
-                >
-                  {/* Timeline Nodes */}
-                  <div className="absolute left-4 -translate-x-1/2 w-6 h-6 bg-gradient-primary rounded-full border-4 border-background shadow-glow z-10 md:hidden" />
-                  <div className="hidden md:block absolute left-1/2 -translate-x-1/2 w-6 h-6 bg-gradient-primary rounded-full border-4 border-background shadow-glow z-10" />
-
-                  {/* Content Card */}
-                  <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:pr-6' : 'md:pl-6'} min-w-0`}>
-                    <div className="bg-gradient-card backdrop-blur-md rounded-2xl p-4 md:p-6 border border-glass-border shadow-card hover:shadow-glow transition-all duration-500 group">
-                      {/* Status Badge + Period */}
-                      <div className="flex flex-wrap items-start justify-between gap-2 mb-3">
-                        <span
-                          className={`px-3 py-1 rounded-full text-xs md:text-sm font-semibold ${
-                            edu.status === 'Current'
-                              ? 'bg-gradient-primary text-background'
-                              : 'bg-background-accent text-foreground-muted border border-glass-border'
-                          }`}
-                        >
-                          {edu.status}
-                        </span>
-                        <span className="text-xs md:text-sm font-mono text-foreground-muted break-words">
-                          {edu.period}
+            <div className="divide-y divide-[hsl(var(--glass-border))]">
+              {certifications.map((cert, idx) => (
+                <div key={cert.title}>
+                  <button
+                    onClick={() => toggleCert(idx)}
+                    className="w-full flex items-center gap-4 py-4 text-left hover:opacity-80 transition-opacity"
+                  >
+                    {cert.logo ? (
+                      <img
+                        src={cert.logo}
+                        alt={cert.issuer}
+                        className="w-10 h-10 rounded-full object-contain bg-white flex-shrink-0"
+                      />
+                    ) : (
+                      <div className="w-10 h-10 rounded-full bg-background-accent border border-[hsl(var(--glass-border))] flex items-center justify-center flex-shrink-0">
+                        <span className="text-sm font-semibold text-foreground">
+                          {cert.initial}
                         </span>
                       </div>
+                    )}
 
-                      {/* Titles */}
-                      <h3 className="text-lg md:text-2xl font-display font-bold text-foreground mb-1 break-words">
-                        {edu.degree}
-                      </h3>
-                      <h4 className="text-base md:text-lg font-semibold text-neon-cyan mb-1 break-words">
-                        {edu.institution}
-                      </h4>
-                      <p className="text-sm md:text-base text-foreground-muted mb-3 break-words">📍 {edu.location}</p>
-
-                      {/* Description */}
-                      <p className="text-sm md:text-base text-foreground-muted leading-relaxed mb-5 break-words">
-                        {edu.description}
-                      </p>
-
-                      {/* Highlights */}
-                      <div className="space-y-2">
-                        <h5 className="text-xs md:text-sm font-semibold text-foreground mb-2">Key Focus Areas:</h5>
-                        <div className="flex flex-wrap gap-2">
-                          {edu.highlights.map((highlight) => (
-                            <span
-                              key={highlight}
-                              className="px-3 py-1 rounded-full bg-background-accent border border-glass-border text-xs md:text-sm text-foreground-muted font-mono break-words"
-                            >
-                              {highlight}
-                            </span>
-                          ))}
-                        </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="font-semibold text-foreground text-sm">
+                        {cert.title}
+                      </div>
+                      <div className="text-foreground-muted text-sm">
+                        {cert.issuer}
                       </div>
                     </div>
-                  </div>
 
-                  {/* Spacer on desktop only */}
-                  <div className="hidden md:block md:w-5/12" />
+                    <span className="text-foreground-muted text-sm flex-shrink-0">
+                      {cert.date}
+                    </span>
+
+                    <ChevronDown
+                      className={`w-4 h-4 text-foreground-muted flex-shrink-0 transition-transform duration-200 ${openCertIndex === idx ? 'rotate-180' : ''
+                        }`}
+                    />
+                  </button>
+
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ease-in-out ${openCertIndex === idx ? 'max-h-40 pb-4' : 'max-h-0'
+                      }`}
+                  >
+                    <div className="pl-14">
+                      <p className="text-foreground-muted text-sm leading-relaxed mb-2">
+                        {cert.description}
+                      </p>
+                      {cert.credentialLink && (
+                        <a
+                          href={cert.credentialLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-sm text-foreground hover:underline"
+                        >
+                          <ExternalLink className="w-3.5 h-3.5" />
+                          View Credential
+                        </a>
+                      )}
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
-          </div>
-
-          {/* Additional Info */}
-          <div className="mt-12 text-center">
-            <div className="bg-gradient-card backdrop-blur-md rounded-2xl p-6 border border-glass-border shadow-card max-w-3xl mx-auto">
-              <h3 className="text-2xl font-display font-semibold text-foreground mb-4">
-                Academic Excellence & Beyond
-              </h3>
-              <p className="text-lg text-foreground-muted leading-relaxed mb-6">
-                My academic journey has been complemented by practical experience through internships, 
-                freelance projects, and active participation in hackathons and coding competitions.
-              </p>
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="text-center">
-                  <div className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent">9+</div>
-                  <div className="text-sm text-foreground-muted">CGPA</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent">5+</div>
-                  <div className="text-sm text-foreground-muted">Academic Projects</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent">4</div>
-                  <div className="text-sm text-foreground-muted">Hackathons</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+          </>
+        )}
       </div>
     </section>
   );
 };
+
 export default EducationSection;

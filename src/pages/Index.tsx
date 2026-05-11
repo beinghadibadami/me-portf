@@ -1,37 +1,38 @@
-import { useEffect } from 'react';
 import FloatingNavbar from '@/components/FloatingNavbar';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
-import ProjectsSection from '@/components/ProjectsSection';
-import SkillsSection from '@/components/SkillsSection';
-import EducationSection from '@/components/EducationSection';
-import HackathonsSection from '@/components/HackathonsSection';
-import CertificationsSection from '@/components/CertificationsSection';
 import ExperienceSection from '@/components/ExperienceSection';
+import EducationSection from '@/components/EducationSection';
+import SkillsSection from '@/components/SkillsSection';
+import ProjectsSection from '@/components/ProjectsSection';
+import HackathonsSection from '@/components/HackathonsSection';
 import ContactSection from '@/components/ContactSection';
+import { FadeIn } from '@/components/FadeIn';
+
+const NoiseOverlay = () => (
+  <div 
+    className="fixed inset-0 pointer-events-none z-[100] opacity-[0.025] mix-blend-difference"
+    style={{ 
+      backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+    }}
+  />
+);
 
 const Index = () => {
-  useEffect(() => {
-    // Force dark theme
-    document.documentElement.classList.add('dark');
-  }, []);
-
   return (
-    <div className="min-h-screen bg-background text-foreground dark">
-      {/* Floating Navigation */}
+    <div className="min-h-screen bg-background text-foreground relative">
+      <NoiseOverlay />
       <FloatingNavbar />
-      
-      {/* Main Content */}
-      <main className="relative">
+
+      <main className="relative z-10">
         <HeroSection />
-        <AboutSection />
-        <ProjectsSection />
-        <SkillsSection />
-        <EducationSection />
-        <HackathonsSection />
-        <CertificationsSection />
-        <ExperienceSection />
-        <ContactSection />
+        <FadeIn><AboutSection /></FadeIn>
+        <FadeIn><ExperienceSection /></FadeIn>
+        <FadeIn><EducationSection /></FadeIn>
+        <FadeIn><SkillsSection /></FadeIn>
+        <FadeIn><ProjectsSection /></FadeIn>
+        <FadeIn><HackathonsSection /></FadeIn>
+        <FadeIn><ContactSection /></FadeIn>
       </main>
     </div>
   );

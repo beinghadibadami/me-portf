@@ -1,61 +1,84 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Futuristic AI/ML Portfolio Design System */
+/* Minimal Portfolio Design System */
 
 @layer base {
   :root {
-    /* Core Dark Theme Colors */
-    --background: 240 10% 3.9%;
-    --background-secondary: 240 8% 7%;
-    --background-accent: 240 6% 12%;
-    --foreground: 210 40% 98%;
-    --foreground-muted: 215 20.2% 65.1%;
+    /* Dark Theme (default) */
+    --background: 0 0% 7%;
+    --background-secondary: 0 0% 10%;
+    --background-accent: 0 0% 14%;
+    --foreground: 0 0% 96%;
+    --foreground-muted: 0 0% 55%;
+    --brand: 236 84% 65%; /* Indigo accent */
 
-    /* Neon Accent Colors */
-    --neon-cyan: 180 100% 50%;
-    --neon-purple: 280 100% 70%;
-    --neon-pink: 330 100% 70%;
-    --neon-blue: 220 100% 60%;
-
-    /* Glassmorphism */
-    --glass: 210 40% 98% / 0.05;
-    --glass-border: 210 40% 98% / 0.1;
-    --glass-hover: 210 40% 98% / 0.08;
-
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(220 70% 60%) 0%, hsl(200 80% 55%) 100%);
-    --gradient-secondary: linear-gradient(135deg, hsl(240 6% 12%) 0%, hsl(240 10% 3.9%) 100%);
-    --gradient-card: linear-gradient(135deg, hsl(240 8% 7% / 0.8) 0%, hsl(240 6% 12% / 0.6) 100%);
-    --gradient-hero: radial-gradient(circle at 20% 50%, hsl(220 70% 60% / 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 20%, hsl(200 80% 55% / 0.1) 0%, transparent 50%);
+    /* Glass */
+    --glass-bg: 0 0% 100% / 0.04;
+    --glass-border: 0 0% 100% / 0.08;
+    --glass-hover: 0 0% 100% / 0.06;
 
     /* Shadows */
-    --shadow-glow: 0 0 50px hsl(180 100% 50% / 0.3);
-    --shadow-purple-glow: 0 0 40px hsl(280 100% 70% / 0.4);
-    --shadow-card: 0 25px 50px -12px hsl(240 10% 3.9% / 0.8);
+    --shadow-card: 0 2px 8px rgba(0,0,0,0.3);
+    --shadow-subtle: 0 1px 3px rgba(0,0,0,0.2);
 
-    /* Component Variables */
-    --card: hsl(var(--background-secondary));
-    --card-foreground: hsl(var(--foreground));
-    --primary: hsl(var(--neon-cyan));
-    --primary-foreground: hsl(var(--background));
-    --secondary: hsl(var(--background-accent));
-    --secondary-foreground: hsl(var(--foreground));
-    --muted: hsl(var(--background-accent));
-    --muted-foreground: hsl(var(--foreground-muted));
-    --accent: hsl(var(--neon-purple));
-    --accent-foreground: hsl(var(--background));
-    --border: hsl(var(--glass-border));
-    --input: hsl(var(--background-accent));
-    --ring: hsl(var(--neon-cyan));
-    --radius: 1rem;
+    /* Component vars (shadcn compat) */
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 96%;
+    --primary: 0 0% 96%;
+    --primary-foreground: 0 0% 7%;
+    --secondary: 0 0% 14%;
+    --secondary-foreground: 0 0% 96%;
+    --muted: 0 0% 14%;
+    --muted-foreground: 0 0% 55%;
+    --accent: 0 0% 14%;
+    --accent-foreground: 0 0% 96%;
+    --border: 0 0% 100% / 0.08;
+    --input: 0 0% 14%;
+    --ring: 0 0% 55%;
+    --radius: 0.75rem;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 96%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 96%;
+  }
 
-    /* Animations */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  /* Light Theme */
+  .light {
+    --background: 0 0% 98%;
+    --background-secondary: 0 0% 95%;
+    --background-accent: 0 0% 90%;
+    --foreground: 0 0% 9%;
+    --foreground-muted: 0 0% 45%;
+    --brand: 236 70% 55%; /* Indigo accent light */
+
+    --glass-bg: 0 0% 0% / 0.03;
+    --glass-border: 0 0% 0% / 0.08;
+    --glass-hover: 0 0% 0% / 0.05;
+
+    --shadow-card: 0 2px 8px rgba(0,0,0,0.06);
+    --shadow-subtle: 0 1px 3px rgba(0,0,0,0.04);
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 95%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 0 0% 95%;
+    --accent-foreground: 0 0% 9%;
+    --border: 0 0% 0% / 0.08;
+    --input: 0 0% 95%;
+    --ring: 0 0% 45%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 9%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
   }
 }
 
@@ -66,72 +89,50 @@
 
   html {
     scroll-behavior: smooth;
-    @apply bg-background;
+    background-color: hsl(var(--background));
     margin: 0;
     padding: 0;
   }
 
   body {
-    @apply bg-background text-foreground;
-    font-family: 'Inter', system-ui, sans-serif;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
     margin: 0;
     padding: 0;
     min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   #root {
     min-height: 100vh;
-    @apply bg-background;
+    background-color: hsl(var(--background));
   }
 }
 
 @layer components {
-  /* Glassmorphism Utilities */
-  .glass-card {
-    @apply bg-gradient-card backdrop-blur-md border border-glass-border shadow-card;
-  }
-  
-  .glass-button {
-    @apply bg-glass border border-glass-border hover:bg-glass-hover backdrop-blur-sm;
-  }
-
   /* Custom Scrollbar */
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
   }
-  
+
   ::-webkit-scrollbar-track {
-    @apply bg-background-secondary;
+    background: hsl(var(--background));
   }
-  
+
   ::-webkit-scrollbar-thumb {
-    @apply bg-gradient-primary rounded-full;
+    background: hsl(var(--foreground-muted));
+    border-radius: 3px;
   }
-  
+
   ::-webkit-scrollbar-thumb:hover {
-    @apply opacity-80;
+    background: hsl(var(--foreground));
   }
 
   /* Selection */
   ::selection {
-    @apply bg-neon-cyan/30 text-foreground;
-  }
-
-  /* Infinite Scroll Animation */
-  @keyframes infinite-scroll {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-33.333333%);
-    }
-  }
-
-  .animate-infinite-scroll {
-    animation: infinite-scroll 30s linear infinite;
-  }
-
-  .hover-pause:hover {
-    animation-play-state: paused;
+    background: hsl(var(--foreground) / 0.15);
+    color: hsl(var(--foreground));
   }
 }
