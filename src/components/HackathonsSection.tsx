@@ -1,6 +1,7 @@
 const hackathons = [
   {
     initial: 'G',
+    logo: '/logos/gec.jfif',
     name: 'HackTheSpring (GEC Gandhinagar)',
     organizer: 'GEC Gandhinagar',
     date: 'Feb 2025',
@@ -8,6 +9,7 @@ const hackathons = [
   },
   {
     initial: 'D',
+    logo: '/logos/daiict.jfif',
     name: 'DAIICT Tic Tac Toe 2025',
     organizer: 'DAIICT Gandhinagar',
     date: 'Apr 2025',
@@ -15,6 +17,7 @@ const hackathons = [
   },
   {
     initial: 'N',
+    logo: '/logos/nirma.webp',
     name: 'Nirma University (NASA Space Apps Challenge)',
     organizer: 'Nirma University, Ahmedabad',
     date: 'Oct 2025',
@@ -22,6 +25,7 @@ const hackathons = [
   },
   {
     initial: 'D',
+    logo: '/logos/daiict.jfif',
     name: 'DAIICT Hackout 2025',
     organizer: 'DAIICT Gandhinagar',
     date: 'Oct 2025',
@@ -29,6 +33,7 @@ const hackathons = [
   },
   {
     initial: 'N',
+    logo: '/logos/noble.png',
     name: 'Noble University Hackathon',
     organizer: 'Noble University, Junagadh',
     date: 'Jan 2026',
@@ -36,6 +41,7 @@ const hackathons = [
   },
   {
     initial: 'D',
+    logo: '/logos/daiict.jfif',
     name: 'DAIICT Tic Tac Toe',
     organizer: 'DAIICT Gandhinagar',
     date: 'April 2026',
@@ -61,8 +67,12 @@ const HackathonsSection = () => {
           {hackathons.map((hack, index) => (
             <div key={index} className="relative pl-8 md:pl-12">
               {/* Circle on the line */}
-              <div className="absolute -left-6 top-0 w-12 h-12 bg-background border border-[hsl(var(--glass-border))] rounded-full flex items-center justify-center shadow-subtle group-hover:border-brand transition-colors">
-                <span className="text-brand font-bold text-lg">{hack.initial}</span>
+              <div className="absolute -left-6 top-0 w-12 h-12 bg-background border border-[hsl(var(--glass-border))] rounded-full flex items-center justify-center shadow-subtle group-hover:border-brand transition-colors overflow-hidden">
+                {hack.logo ? (
+                  <img src={hack.logo} alt={hack.organizer} className="w-full h-full object-cover" />
+                ) : (
+                  <span className="text-brand font-bold text-lg">{hack.initial}</span>
+                )}
               </div>
 
               {/* Content */}

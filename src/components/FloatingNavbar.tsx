@@ -53,18 +53,18 @@ const FloatingNavbar = () => {
   };
 
   const XIcon = () => (
-    <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-white">
+    <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-foreground">
       <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
     </svg>
   );
 
   const dockItems = [
-    { icon: <Home className="w-5 h-5 text-white" />, label: 'Home', onClick: () => scrollToSection('hero') },
-    { icon: <Code className="w-5 h-5 text-white" />, label: 'Projects', onClick: () => scrollToSection('projects') },
-    { icon: <Github className="w-5 h-5 text-white" />, label: 'GitHub', onClick: () => window.open('https://github.com/beinghadibadami', '_blank') },
-    { icon: <Linkedin className="w-5 h-5 text-white" />, label: 'LinkedIn', onClick: () => window.open('https://linkedin.com/in/hadi-badami', '_blank') },
+    { icon: <Home className="w-5 h-5 text-foreground" />, label: 'Home', onClick: () => scrollToSection('hero') },
+    { icon: <Code className="w-5 h-5 text-foreground" />, label: 'Projects', onClick: () => scrollToSection('projects') },
+    { icon: <Github className="w-5 h-5 text-foreground" />, label: 'GitHub', onClick: () => window.open('https://github.com/beinghadibadami', '_blank') },
+    { icon: <Linkedin className="w-5 h-5 text-foreground" />, label: 'LinkedIn', onClick: () => window.open('https://linkedin.com/in/hadi-badami', '_blank') },
     { icon: <XIcon />, label: 'X', onClick: () => window.open('https://x.com/beinghadibadami', '_blank') },
-    { icon: isDark ? <Sun className="w-5 h-5 text-white" /> : <Moon className="w-5 h-5 text-white" />, label: isDark ? 'Light Mode' : 'Dark Mode', onClick: toggleTheme },
+    { icon: isDark ? <Sun className="w-5 h-5 text-foreground" /> : <Moon className="w-5 h-5 text-foreground" />, label: isDark ? 'Light Mode' : 'Dark Mode', onClick: toggleTheme },
   ];
 
   return (
