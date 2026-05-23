@@ -44,7 +44,7 @@ const allProjects: Project[] = [
   },
   {
     title: 'Aire Real Estate',
-    period: '2025',
+    period: '2026',
     category: 'B2B Automation',
     description:
       'An automation tool utilized by companies to generate dynamic business pitch presentations. B2B AUTOMATION.',
@@ -68,7 +68,7 @@ const allProjects: Project[] = [
   },
   {
     title: 'Masani Marine',
-    period: '2025',
+    period: '2026',
     category: 'Web',
     description:
       'Professional corporate website for a marine services company, featuring modern UI and seamless user experience.',
@@ -76,21 +76,23 @@ const allProjects: Project[] = [
       'Masani Marine is a professionally crafted corporate website built for a marine services company. The site delivers a clean, authoritative online presence with a modern design, showcasing the company\'s services, expertise, and fleet. Features a responsive layout optimized for all devices.',
     tech: ['React', 'Node.js', 'Modern UI', 'Responsive Design'],
     demo: 'https://masani-marine.onrender.com/',
+    video: '/videos/masani-marine.mp4',
   },
   {
     title: 'MA Global Ventures',
-    period: '2025',
+    period: '2026',
     category: 'Web',
     description:
-      'Corporate web presence for a global ventures firm, designed to establish trust and attract international clients.',
+      'Corporate B2B catalog and web presence for a leading manufacturer of dehydrated alliums, herbs, and specialty food powders.',
     overview:
-      'MA Global Ventures is a full corporate website built for an international business firm. The platform presents the company\'s portfolio, services, and global reach with a premium, professional aesthetic. Features smooth navigation, compelling visuals, and a well-structured information hierarchy to convert visitors into leads.',
+      'MA Global Ventures is a full corporate B2B catalog website built for a manufacturer of dehydrated foods and spices based in India. The platform showcases an extensive 9-category product range including dehydrated garlic, various onions, ginger, vegetable powders, and specialty items. It features a modern, responsive UI with a well-structured information hierarchy designed to attract international clients.',
     tech: ['React', 'Node.js', 'Modern UI', 'Responsive Design'],
     demo: 'https://ma-global-ventures.onrender.com/',
+    video: '/videos/ma-global.mp4',
   },
   {
     title: 'GruntWorkr',
-    period: '2025',
+    period: '2026',
     category: 'AI',
     description:
       'AI-Powered Multi-Agent Talent Intelligence platform for streamlining recruitment through intelligent resume parsing and candidate matching.',
@@ -121,6 +123,7 @@ const allProjects: Project[] = [
       'Source-Referenced: Responses tied back to specific sections of the Risalah al-Amaliyyah',
       'Multilingual Intent: Built to serve English-speaking Shia Muslim communities worldwide',
     ],
+    demo: 'https://al-sistani-chat.onrender.com/',
     tech: ['Python', 'RAG', 'Vector Search', 'LLM', 'FastAPI', 'Islamic Jurisprudence'],
     videoPlaceholder: true,
   },
@@ -188,11 +191,10 @@ const AllProjects = () => {
             <button
               key={cat}
               onClick={() => setFilter(cat)}
-              className={`px-4 py-1.5 rounded-full text-sm font-medium border transition-all duration-200 ${
-                filter === cat
-                  ? 'bg-foreground text-background border-foreground'
-                  : 'bg-transparent text-foreground-muted border-[hsl(var(--glass-border))] hover:border-foreground/30 hover:text-foreground'
-              }`}
+              className={`px-4 py-1.5 rounded-full text-sm font-medium border transition-all duration-200 ${filter === cat
+                ? 'bg-foreground text-background border-foreground'
+                : 'bg-transparent text-foreground-muted border-[hsl(var(--glass-border))] hover:border-foreground/30 hover:text-foreground'
+                }`}
             >
               {cat}
             </button>
@@ -407,9 +409,8 @@ const AllProjects = () => {
                   <span className="text-foreground-muted text-sm">{selectedProject.period}</span>
                 </div>
                 <span
-                  className={`px-2.5 py-1 text-xs font-semibold rounded-full border ${
-                    categoryColors[selectedProject.category] ?? 'text-foreground-muted bg-background-secondary border-[hsl(var(--glass-border))]'
-                  }`}
+                  className={`px-2.5 py-1 text-xs font-semibold rounded-full border ${categoryColors[selectedProject.category] ?? 'text-foreground-muted bg-background-secondary border-[hsl(var(--glass-border))]'
+                    }`}
                 >
                   {selectedProject.category}
                 </span>

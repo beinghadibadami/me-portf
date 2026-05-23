@@ -49,15 +49,15 @@ const projects: Project[] = [
     video: '/videos/aire-realestate.mp4',
   },
   {
-    title: 'DivineSyncServe',
+    title: 'MA Global Ventures',
     period: '2025',
     description:
-      'Core PHP based website for an IT Company with payment integration.',
+      'Corporate B2B catalog and web presence for a leading manufacturer of dehydrated alliums, herbs, and specialty food powders.',
     overview:
-      'DivineSyncServe is a production IT company website built with core PHP. Features include JWT authentication, HDFC SmartGateway payment integration for secure transactions, and MongoDB for storing user data and transaction records.',
-    tech: ['PHP', 'JWT Auth', 'MongoDB', 'HDFC SmartGateway'],
-    demo: 'https://divinesyncserve.com',
-    video: '/videos/divine-demo.mp4',
+      'MA Global Ventures is a full corporate B2B catalog website built for a manufacturer of dehydrated foods and spices based in India. The platform showcases an extensive 9-category product range including dehydrated garlic, various onions, ginger, vegetable powders, and specialty items. It features a modern, responsive UI with a well-structured information hierarchy designed to attract international clients.',
+    tech: ['React', 'Node.js', 'Modern UI', 'Responsive Design'],
+    demo: 'https://ma-global-ventures.onrender.com/',
+    video: '/videos/ma-global.mp4',
   },
 ];
 
