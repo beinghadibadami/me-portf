@@ -28,7 +28,7 @@ const ContactSection = () => {
             href="mailto:hadibadami06@gmail.com"
             className="text-blue-500 hover:underline transition-all"
           >
-            hadibadami14@gmail.com
+            hadibadami06@gmail.com
           </a>
         </p>
       </div>
