@@ -32,8 +32,11 @@ const Index = () => {
         <FadeIn><SkillsSection /></FadeIn>
         <FadeIn><ProjectsSection /></FadeIn>
         <FadeIn><HackathonsSection /></FadeIn>
-        <FadeIn><ContactSection /></FadeIn>
       </main>
+
+      <footer className="relative z-10">
+        <FadeIn><ContactSection /></FadeIn>
+      </footer>
     </div>
   );
 };

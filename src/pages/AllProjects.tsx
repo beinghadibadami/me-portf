@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { X, ExternalLink, Github, ArrowLeft, Play } from 'lucide-react';
 import { Magnetic } from '@/components/Magnetic';
 
@@ -139,6 +139,20 @@ const categoryColors: Record<string, string> = {
 const AllProjects = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [filter, setFilter] = useState<string>('All');
+
+  useEffect(() => {
+    document.title = 'All Projects | Hadi Badami - AI/ML Engineer Portfolio';
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', 'Browse all projects by Hadi Badami — AI-powered platforms, data pipelines, corporate websites, and B2B automation tools.');
+    }
+    return () => {
+      document.title = 'Hadi Badami | AI/ML Engineer & Full Stack Developer';
+      if (metaDesc) {
+        metaDesc.setAttribute('content', 'Hadi Badami - Professional AI/ML Engineer specializing in RAG systems, vector search, data science, and scalable web applications. Explore my portfolio of innovative AI solutions.');
+      }
+    };
+  }, []);
 
   const categories = ['All', ...Array.from(new Set(allProjects.map(p => p.category)))];
   const filtered = filter === 'All' ? allProjects : allProjects.filter(p => p.category === filter);
