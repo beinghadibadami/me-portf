@@ -33,6 +33,7 @@ const projects: Project[] = [
     overview:
       'Fonda is a state-of-the-art, AI-driven business intelligence and automation platform. It serves as a comprehensive "Research-to-Launch" ecosystem, enabling users to transform a simple business idea into a fully-fledged research report and a live, professional website in minutes. By leveraging advanced LLMs and automated deployment pipelines, Fonda eliminates the traditional barriers of market research and web development.',
     tech: ['Next.js 14', 'Node.js', 'MongoDB', 'AI', 'Socket.io', 'AWS S3', 'Clerk'],
+    demo: 'https://www.fonda.co/',
     video: '/videos/fonda.mp4',
   },
   {

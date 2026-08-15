@@ -35,6 +35,7 @@ const allProjects: Project[] = [
       'Production Launch: Real-time monitoring and iterative fine-tuning based on call transcripts',
     ],
     tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Redis', 'MongoDB', 'Synthflow', 'ChatGPT'],
+    demo: 'https://callease.ai/',
     video: '/videos/callease-ai.mp4',
   },
   {
@@ -53,6 +54,7 @@ const allProjects: Project[] = [
       'Comprehensive Reports: Full research reports with market analysis and competitive intelligence',
     ],
     tech: ['Next.js 14', 'Node.js', 'MongoDB', 'AI', 'Socket.io', 'AWS S3', 'Clerk', 'Runware'],
+    demo: 'https://www.fonda.co/',
     video: '/videos/fonda.mp4',
   },
   {
