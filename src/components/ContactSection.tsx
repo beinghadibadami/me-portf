@@ -16,7 +16,7 @@ const ContactSection = () => {
         <p className="text-foreground-muted text-lg md:text-xl leading-relaxed">
           Want to chat? Just shoot me a dm{' '}
           <a
-            href="https://x.com/beinghadibadami"
+            href="https://x.com/hadi_badami14"
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-500 hover:underline transition-all"

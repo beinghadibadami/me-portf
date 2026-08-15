@@ -18,6 +18,117 @@ interface Project {
 
 const allProjects: Project[] = [
   {
+    title: 'Callease AI',
+    period: '2025',
+    category: 'AI',
+    description:
+      'Automate Phone Calls With Human-Like AI Voice Agents for Australian Businesses.',
+    overview:
+      'Callease AI is a next-generation AI voice orchestration platform designed to automate high-fidelity phone conversations for Australian businesses. The platform allows companies to deploy natural-sounding AI voice agents that handle inbound and outbound calls, book meetings, and qualify leads 24/7. By integrating with tools like Synthflow and ChatGPT, Callease AI bridges the gap between automated response systems and human-like interaction. Features include persona design, knowledge base ingestion, CRM integration, calendar sync, prompt engineering, SIP/number provisioning, and production launch with real-time monitoring.',
+    features: [
+      'Persona Design: Defining the AI agent\'s tone, accent, and conversational boundaries',
+      'Knowledge Base Ingestion: Feeding company-specific data and FAQs into the LLM context',
+      'CRM Integration: Linking the agent to client databases for real-time lead updates',
+      'Calendar Sync: Enabling the AI to check availability and book meetings directly',
+      'Prompt Engineering: Fine-tuning the conversation flow for specific business goals',
+      'SIP/Number Provisioning: Setting up local Australian numbers for high trust and pick-up rates',
+      'Production Launch: Real-time monitoring and iterative fine-tuning based on call transcripts',
+    ],
+    tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Redis', 'MongoDB', 'Synthflow', 'ChatGPT'],
+    video: '/videos/callease-ai.mp4',
+  },
+  {
+    title: 'Fonda',
+    period: '2025',
+    category: 'AI',
+    description:
+      'AI-driven business intelligence and automation platform that transforms a business idea into a full research report and live website in minutes.',
+    overview:
+      'Fonda is a state-of-the-art, AI-driven business intelligence and automation platform. It serves as a comprehensive "Research-to-Launch" ecosystem, enabling users to transform a simple business idea into a fully-fledged research report and a live, professional website in minutes. By leveraging advanced LLMs and automated deployment pipelines, Fonda eliminates the traditional barriers of market research and web development. The platform features AI orchestration for consistent research data, automated 5-step WordPress deployment pipeline, dynamic UI/UX with real-time status updates via WebSockets, and media pipeline integration with Runware for real-time image generation.',
+    features: [
+      'AI Orchestration: Fine-tuned prompts for consistent, factual, and professional business research',
+      'Automated Deployment: 5-step WordPress automation (Subdomain → Install → Theme → Content → Plugins)',
+      'Dynamic UI/UX: High-performance dashboard with Next.js featuring real-time WebSocket updates',
+      'Media Pipeline: Runware integration for real-time, industry-specific image generation',
+      'Comprehensive Reports: Full research reports with market analysis and competitive intelligence',
+    ],
+    tech: ['Next.js 14', 'Node.js', 'MongoDB', 'AI', 'Socket.io', 'AWS S3', 'Clerk', 'Runware'],
+    video: '/videos/fonda.mp4',
+  },
+  {
+    title: 'SLC',
+    period: '2025',
+    category: 'Mobile',
+    description:
+      'Premium, high-performance communication suite providing secure, real-time messaging, high-fidelity video conferencing, and VOIP-to-PSTN World Calls.',
+    overview:
+      'SLC is a premium, high-performance communication suite designed to provide secure, real-time connectivity across mobile platforms. It serves as a unified ecosystem for instant messaging, high-fidelity video conferencing, and "World Calls"—a specialized integration that bridges digital VOIP with traditional PSTN (Public Switched Telephone Network) lines. By leveraging a distributed serverless architecture, SLC ensures sub-100ms latency for messaging while providing enterprise-grade security and a credit-based global calling system.',
+    features: [
+      'Real-time Messaging: Firebase RTDB for instantaneous messaging with typing indicators',
+      'High-Fidelity Media: GetStream and Twilio SDKs for adaptive bitrate video and crystal-clear audio',
+      'World Calls: VOIP-to-PSTN integration for calling traditional phone numbers globally',
+      'Secure Billing: Firebase Cloud Functions for PSTN call initiation and atomic credit deductions',
+      'Push Notifications: Dual-path system (Expo + Direct FCM) for reliable message delivery',
+    ],
+    tech: ['React Native', 'Expo', 'Firebase', 'GetStream', 'Twilio', 'Node.js', 'Zustand', 'TypeScript'],
+    video: '/videos/SLC.mp4',
+  },
+  {
+    title: 'OSMO',
+    period: '2025',
+    category: 'Automation',
+    description:
+      'AI-driven marketing automation suite designed to centralize and streamline online marketing workflows across social networks, search engines, and direct outreach.',
+    overview:
+      'OSMO is a comprehensive, AI-driven marketing automation suite designed to centralize and streamline online marketing workflows. It acts as an all-in-one system for content creation, scheduling, outreach, SEO optimization, and paid advertising management. By unifying multiple fragmented marketing operations into a single platform, OSMO aims to simplify the complexities of digital marketing, enabling automated campaigns across major social networks (LinkedIn, Instagram, Facebook, X), search engines, and direct outreach channels.',
+    features: [
+      'Scalable Frontend: Highly responsive, server-side rendered UI using Next.js 16 and React 19',
+      'AI Integration Engine: Orchestrating Azure AI (GPT-4o) and Runware for real-time content and media creation',
+      'Asynchronous Processing: Reliable task queues via Redis for scheduling and outreach',
+      'State Synchronization: React Query for real-time dashboard updates',
+      'Multi-Platform Support: LinkedIn, Meta (FB/IG), Google Ads, X (Twitter) integrations',
+    ],
+    tech: ['Next.js 16', 'React 19', 'Node.js', 'Python', 'FastAPI', 'PostgreSQL', 'MongoDB', 'Redis', 'Azure AI', 'Runware'],
+    video: '/videos/osmo.mp4',
+  },
+  {
+    title: 'Candidate App',
+    period: '2025',
+    category: 'Mobile',
+    description:
+      'High-performance mobile hub for career advancement, resume optimization, and specialized technical mentorship.',
+    overview:
+      'The Candidate App is a high-performance mobile application developed for The North Tech Labs. It serves as a central hub for candidates seeking career advancement, resume optimization, and specialized technical mentorship. The app bridges the gap between candidates and industry experts by providing a structured task-driven workflow, real-time communication, and secure payment processing for professional services. Built with React Native and Expo, it features a modern UI powered by Tamagui, real-time messaging via Socket.io, and seamless payment integration with Stripe.',
+    features: [
+      'Scalable Mobile UI: High-performance UI using Tamagui with consistent design tokens',
+      'Real-time Communication: Socket.io for instant messaging, typing indicators, and live notifications',
+      'State Management: Zustand for lightweight, performant state management',
+      'Secure Payments: Stripe React Native SDK for multi-currency service purchases',
+      'Task-Driven Workflow: Structured career advancement paths with expert guidance',
+    ],
+    tech: ['React Native', 'Expo', 'Tamagui', 'Node.js', 'Socket.io', 'Clerk', 'Stripe', 'Zustand', 'AWS S3', 'PostgreSQL'],
+    video: '/videos/candidate-mobile.mp4',
+  },
+  {
+    title: 'Suprhealthy',
+    period: '2025',
+    category: 'E-commerce',
+    description:
+      'E-commerce platform built on Shopify selling premium monk fruit powder and drops with integrated payment and shipping solutions.',
+    overview:
+      'Suprhealthy is a Shopify-based e-commerce website specializing in monk fruit powder and drops. The platform features seamless payment integration with Razorpay for secure transactions, automated shipping through Shiprocket for efficient order fulfillment, and custom Shopify Liquid templating for an optimized shopping experience. Built to provide customers with healthy sweetener alternatives with a smooth checkout process and reliable delivery system.',
+    features: [
+      'Shopify Platform: Built on Shopify for robust e-commerce capabilities',
+      'Custom Liquid Templates: Optimized shopping experience with custom Shopify Liquid code',
+      'Razorpay Integration: Secure payment processing for Indian market',
+      'Shiprocket Integration: Automated shipping and order tracking',
+      'Product Catalog: Premium monk fruit powder and drops',
+    ],
+    tech: ['Shopify', 'Shopify Liquid', 'Razorpay', 'Shiprocket', 'E-commerce'],
+    demo: 'https://suprhealthy.in',
+    video: '/videos/suprhealthy.mp4',
+  },
+  {
     title: 'CodeChat AI',
     period: '2025',
     category: 'AI',
@@ -45,7 +156,7 @@ const allProjects: Project[] = [
   {
     title: 'Aire Real Estate',
     period: '2026',
-    category: 'B2B Automation',
+    category: 'Automation',
     description:
       'An automation tool utilized by companies to generate dynamic business pitch presentations. B2B AUTOMATION.',
     overview:
@@ -91,6 +202,17 @@ const allProjects: Project[] = [
     video: '/videos/ma-global.mp4',
   },
   {
+    title: 'VegVision',
+    period: '2025',
+    category: 'AI',
+    description:
+      'AI-powered vegetable disease detection system using computer vision and deep learning.',
+    overview:
+      'VegVision is an AI-powered agricultural tool that uses computer vision and deep learning to detect diseases in vegetables. The system helps farmers identify plant diseases early, enabling timely intervention and reducing crop loss. Built with modern AI frameworks, it provides accurate disease classification and treatment recommendations.',
+    tech: ['Python', 'Computer Vision', 'Deep Learning', 'TensorFlow', 'FastAPI'],
+    video: '/videos/vegvision-demo.mp4',
+  },
+  {
     title: 'GruntWorkr',
     period: '2026',
     category: 'AI',
@@ -132,8 +254,10 @@ const allProjects: Project[] = [
 const categoryColors: Record<string, string> = {
   'AI': 'text-violet-400 bg-violet-400/10 border-violet-400/20',
   'Data Pipeline': 'text-blue-400 bg-blue-400/10 border-blue-400/20',
-  'B2B Automation': 'text-emerald-400 bg-emerald-400/10 border-emerald-400/20',
+  'Automation': 'text-emerald-400 bg-emerald-400/10 border-emerald-400/20',
   'Web': 'text-sky-400 bg-sky-400/10 border-sky-400/20',
+  'Mobile': 'text-pink-400 bg-pink-400/10 border-pink-400/20',
+  'E-commerce': 'text-amber-400 bg-amber-400/10 border-amber-400/20',
 };
 
 const AllProjects = () => {

@@ -15,6 +15,49 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: 'CarPHD',
+    period: '2025',
+    description:
+      'Comprehensive data pipeline for scraping car information, reviews, dealer & service center data.',
+    overview:
+      'CarPHD is a comprehensive data pipeline for scraping car information, reviews, enriching metadata, dealer & service center data for a client. It includes 270+ new car records, Google reviews scraping, dealer info for Delhi NCR, and dynamic UI features with an AI-powered chatbot for car comparisons.',
+    tech: ['Web Scraping', 'Data Pipeline', 'PostgreSQL', 'Google Reviews Scraping'],
+    demo: 'https://carphd.com',
+    video: '/videos/carphd_demo.mp4',
+  },
+  {
+    title: 'Fonda',
+    period: '2025',
+    description:
+      'AI-driven business intelligence and automation platform that transforms a business idea into a full research report and live website in minutes.',
+    overview:
+      'Fonda is a state-of-the-art, AI-driven business intelligence and automation platform. It serves as a comprehensive "Research-to-Launch" ecosystem, enabling users to transform a simple business idea into a fully-fledged research report and a live, professional website in minutes. By leveraging advanced LLMs and automated deployment pipelines, Fonda eliminates the traditional barriers of market research and web development.',
+    tech: ['Next.js 14', 'Node.js', 'MongoDB', 'AI', 'Socket.io', 'AWS S3', 'Clerk'],
+    video: '/videos/fonda.mp4',
+  },
+  {
+    title: 'Suprhealthy',
+    period: '2025',
+    description:
+      'E-commerce platform built on Shopify selling premium monk fruit powder and drops with integrated payment and shipping solutions.',
+    overview:
+      'Suprhealthy is a Shopify-based e-commerce website specializing in monk fruit powder and drops. The platform features seamless payment integration with Razorpay, automated shipping through Shiprocket, and custom Shopify Liquid templating for an optimized shopping experience. Built to provide customers with healthy sweetener alternatives with a smooth checkout process.',
+    tech: ['Shopify', 'Shopify Liquid', 'Razorpay', 'Shiprocket', 'E-commerce'],
+    demo: 'https://suprhealthy.in',
+    video: '/videos/suprhealthy.mp4',
+  },
+  {
+    title: 'Aire Real Estate',
+    period: '2026',
+    description:
+      'An automation tool utilized by companies to generate dynamic business pitch presentations. B2B AUTOMATION.',
+    overview:
+      'Aire Real Estate is a sophisticated B2B automation platform designed for real estate companies. It streamlines the generation of dynamic, data-driven business pitch presentations, allowing teams to create professional materials in minutes rather than hours.',
+    tech: ['Next.js', 'React Native', 'Node.js', 'MongoDB', 'Redis'],
+    demo: 'https://www.aire-realestate.com/',
+    video: '/videos/aire-realestate.mp4',
+  },
+  {
     title: 'CodeChat AI',
     period: '2025',
     description:
@@ -27,37 +70,14 @@ const projects: Project[] = [
     video: '/videos/codechat-demo.mp4',
   },
   {
-    title: 'CarPHD',
+    title: 'SLC',
     period: '2025',
     description:
-      'Comprehensive data pipeline for scraping car information, reviews, dealer & service center data.',
+      'Premium, high-performance communication suite providing secure, real-time messaging, high-fidelity video conferencing, and VOIP-to-PSTN World Calls.',
     overview:
-      'CarPHD is a comprehensive data pipeline for scraping car information, reviews, enriching metadata, dealer & service center data for a client. It includes 270+ new car records, Google reviews scraping, dealer info for Delhi NCR, and dynamic UI features with an AI-powered chatbot for car comparisons.',
-    tech: ['Web Scraping', 'Data Pipeline', 'PostgreSQL', 'Google Reviews Scraping'],
-    demo: 'https://carphd.com',
-    video: '/videos/carphd_demo.mp4',
-  },
-  {
-    title: 'Aire Real Estate',
-    period: '2025',
-    description:
-      'An automation tool utilized by companies to generate dynamic business pitch presentations. B2B AUTOMATION.',
-    overview:
-      'Aire Real Estate is a sophisticated B2B automation platform designed for real estate companies. It streamlines the generation of dynamic, data-driven business pitch presentations, allowing teams to create professional materials in minutes rather than hours.',
-    tech: ['Next.js', 'React Native', 'Node.js', 'MongoDB', 'Redis'],
-    demo: 'https://www.aire-realestate.com/',
-    video: '/videos/aire-realestate.mp4',
-  },
-  {
-    title: 'MA Global Ventures',
-    period: '2025',
-    description:
-      'Corporate B2B catalog and web presence for a leading manufacturer of dehydrated alliums, herbs, and specialty food powders.',
-    overview:
-      'MA Global Ventures is a full corporate B2B catalog website built for a manufacturer of dehydrated foods and spices based in India. The platform showcases an extensive 9-category product range including dehydrated garlic, various onions, ginger, vegetable powders, and specialty items. It features a modern, responsive UI with a well-structured information hierarchy designed to attract international clients.',
-    tech: ['React', 'Node.js', 'Modern UI', 'Responsive Design'],
-    demo: 'https://ma-global-ventures.onrender.com/',
-    video: '/videos/ma-global.mp4',
+      'SLC is a premium, high-performance communication suite designed to provide secure, real-time connectivity across mobile platforms. It serves as a unified ecosystem for instant messaging, high-fidelity video conferencing, and "World Calls"—a specialized integration that bridges digital VOIP with traditional PSTN lines. By leveraging a distributed serverless architecture, SLC ensures sub-100ms latency for messaging.',
+    tech: ['React Native', 'Firebase', 'GetStream', 'Twilio', 'Node.js', 'Zustand'],
+    video: '/videos/SLC.mp4',
   },
 ];
 
